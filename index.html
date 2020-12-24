@@ -1,16 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet"
+        href="https://materializecss.com/dist/css/materialize.min.css" />
+
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>The Full Tankard</title>
 </head>
-<body>
-    <h1>My page</h1>
 
-    <script type="text/javascript" src="assets/script/materialize.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<body>
+    <section id="index-banner" class="parallax-container">
+        <nav role="navigation">
+            <section class="nav-wrapper">
+                <a id="logo-container" href="#" class="brand-logo">The Full Tankard</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="./assets/html/beer.html">Beer</a></li>
+                    <li><a href="./assets/html/brewery.html">Brewery</a></li>
+                    <li><a href="assets/html/contact.html">Contact</a></li>
+                </ul>
+
+                <ul id="nav-mobile" class="sidenav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="./assets/html/beer.html">Beer</a></li>
+                    <li><a href="./assets/html/brewery.html">Brewery</a></li>
+                    <li><a href="assets/html/contact.html">Contact</a></li>
+                </ul>
+                <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            </section>
+        </nav>
+
+        <section class="section no-pad-bot">
+            <section class="container">
+                <br><br>
+                <section class="row center" id="btns">
+                    <a class="waves-effect orange accent-3 btn-large beer" href="./assets/html/beer.html">Beer</a>
+                    <a class="waves-effect brown darken-3 btn-large brewery-btn" href="assets/html/brewery.html">Brewery</a>
+                </section>
+            </section>
+        </section>
+        <section class="parallax background-img1"></section>
+    </section>
+
+
+    <section class="container">
+        <section class="section">
+            <section class="row center">
+                <section class="col s12">
+                    <h2>Trending</h2>
+                </section>
+            </section>
+
+            <!--   Icon Section   -->
+            <section class="row"></section>
+
+        </section>
+    </section>
+
+
+    <section class="parallax-container valign-wrapper">
+        <section class="section no-pad-bot">
+            <section class="container">
+                <section class="row center">
+                    <h5 class="header col s12 light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim,
+                        laborum corrupti quidem debitis alias, veniam totam eius a, beatae repellendus dolor dolores quo
+                        itaque inventore consequatur laboriosam ipsam earum ad.
+                    </h5>
+                </section>
+            </section>
+        </section>
+        <section class="parallax background-img2"></section>
+    </section>
+
+    <section class="container">
+        <section class="section">
+            <section class="row">
+                <section class="col s12 center">
+                    <h3><i class="mdi-content-send brown-text"></i></h3>
+                    <h4>Contact Us</h4>
+                    <section class="row">
+                        <section class="col s3"></section>
+                        <form class="col s6">
+                            <section class="row">
+                                <section class="input-field col s12">
+                                    <input id="name" type="text" class="validate">
+                                    <label for="last_name">Name</label>
+                                </section>
+                            </section>
+                            <section class="row">
+                                <section class="input-field col s12">
+                                    <input id="email" type="email" class="validate">
+                                    <label for="email">Email</label>
+                                </section>
+                            </section>
+                            <section class="row">
+                                <section class="input-field col s12">
+                                    <textarea id="textarea" class="materialize-textarea" data-length="120"></textarea>
+                                    <label for="textarea">Message</label>
+                                </section>
+                            </section>
+                            <button class="btn waves-effect" type="submit" name="action">Send
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </form>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+
+
+    <section class="parallax-container valign-wrapper">
+        <!-- <section class="section no-pad-bot">
+            <section class="container">
+                <section class="row center">
+                    <h5 class="header col s12 light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+                        aperiam quasi numquam architecto, optio libero. Corporis delectus fugit, eveniet aut incidunt
+                        quas nemo rem voluptatum rerum tempore saepe cum assumenda!
+                    </h5>
+                </section>
+            </section>
+        </section> -->
+        <section class="parallax background-img3"></section>
+    </section>
+
+    <footer class="page-footer grey darken-4">
+        <section class="footer-copyright">
+            <section class="container">
+                Made by <a class="brown-text text-lighten-3" href="">Elias Calagiu, Rita Z., Shea Mullaney</a>
+            </section>
+        </section>
+    </footer>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://materializecss.com/dist/js/materialize.js"></script>
+    <script src="https://materializecss.com/dist/js/materialize.js"></script>
     <script src="assets/script/script.js"></script>
 </body>
+
 </html>

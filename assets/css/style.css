@@ -1,0 +1,65 @@
+body {
+  background-color: #212121;
+  height: 100%;
+  margin: 0;
+  color: #eee5d9;
+}
+
+nav {
+  padding: 0 10px;
+}
+
+nav ul a,
+ nav .brand-logo {
+  color: #eee5d9;
+}
+
+nav {
+  background-color: rgba(0,0,0,.5);
+  box-shadow: none;
+}
+
+.beer:hover {
+  color: #6d4c41;
+}
+
+.brewery-btn:hover {
+  color: #ff9100;
+}
+
+.btn-large {
+  opacity: 0.8;
+  color:  #eee5d9;
+}
+
+.card {
+  background-color: transparent;
+}
+
+#logo-container {
+  font-family: 'Shadows Into Light', cursive;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+footer {
+ padding-top: 0 !important;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%; 
+}
+
+.container {
+  margin-top: 50px;
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
