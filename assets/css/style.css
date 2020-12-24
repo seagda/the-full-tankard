@@ -1,5 +1,12 @@
-.active {
-  color: #ffe0b2;
+body {
+  background-color: #212121;
+  height: 100%;
+  margin: 0;
+  color: #eee5d9;
+}
+
+nav {
+  padding: 0 10px;
 }
 
 nav ul a,
@@ -8,87 +15,47 @@ nav ul a,
 }
 
 nav {
-  background-color: rgba(0,0,0,.2);
+  background-color: rgba(0,0,0,.5);
   box-shadow: none;
 }
 
-.background-img1 {
-  background: url(https://images.unsplash.com/photo-1436076863939-06870fe779c2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80) no-repeat center center fixed;
-  background-size: cover;
-  height: 100%;
-  overflow: hidden;
+.beer:hover {
+  color: #6d4c41;
 }
 
-.background-img2 {
-  background: url(https://images.unsplash.com/photo-1538488881038-e252a119ace7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80) no-repeat center center fixed;
-  background-size: cover;
-  height: 100%;
-  overflow: hidden;
-}
-
-.background-img3 {
-  background: url(https://images.unsplash.com/photo-1576723072484-b4d99bc3c9a3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2501&q=80) no-repeat center center fixed;
-  background-size: cover;
-  width: 100%;
-  overflow: hidden;
-}
- 
-#btns {
-  margin-top: 250px;
+.brewery-btn:hover {
+  color: #ff9100;
 }
 
 .btn-large {
-  background-color: rgba(0,0,0,.7);
+  opacity: 0.8;
+  color:  #eee5d9;
 }
 
-#btns > a {
-  width: 150px;
-  margin: 10px;
+.card {
+  background-color: transparent;
 }
 
-p {
-   line-height: 2rem;
+#logo-container {
+  font-family: 'Shadows Into Light', cursive;
 }
- 
- .sidenav-trigger {
-   color: #26a69a;
- }
- 
- .parallax-container {
-   min-height: 500px;
-   line-height: 0;
-   height: auto;
-   color: rgba(255,255,255,.9);
- }
-  
- .parallax-container .section {
-    width: 100%;
-  }
- 
- .icon-block {
-   padding: 0 15px;
- }
 
- .icon-block .material-icons {
-   font-size: inherit;
- }
- 
- footer.page-footer {
-   margin: 0;
- }
+footer.page-footer {
+  margin: 0;
+}
 
- footer {
-   padding-top: 0 !important;
- }
+footer {
+ padding-top: 0 !important;
+}
 
- @media only screen and (max-width : 992px) {
-  .parallax-container .section {
-    position: absolute;
-    top: 40%;
-  }
-  #index-banner .section {
-    top: 10%;
-  }
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%; 
+}
+
+.container {
+  margin-top: 50px;
 }
 
 @media only screen and (max-width : 600px) {
