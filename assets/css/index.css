@@ -20,20 +20,7 @@
   }
   
   #btns {
-    margin-top: 250px;
-  }
-  
-  #btns > a {
-    width: 150px;
-    margin: 10px;
-  }
-  
-  p {
-    line-height: 2rem;
-  }
-   
-  .sidenav-trigger {
-    color: #26a69a;
+    margin-top: 200px;
   }
    
   .parallax-container {
@@ -53,4 +40,17 @@
   
   .icon-block .material-icons {
     font-size: inherit;
+  }
+
+  @media (max-width: 600px) {
+    .beer-btn, .brewery-btn {
+      display: block;
+      min-width: 130px;
+      min-height: 50px;
+      margin: 20px auto;
+    }
+
+    #btns {
+      margin-top: 150px;
+    }
   }

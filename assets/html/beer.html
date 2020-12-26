@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Amatic+SC:wght@700&family=Abel&family=Handlee&display=swap"
+        rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -36,7 +38,7 @@
                     <li><a href="./brewery.html">Brewery</a></li>
                     <li><a href="./contact.html">Contact</a></li>
                 </ul>
-                <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons menu">menu</i></a>
             </section>
         </nav>
 
@@ -44,7 +46,7 @@
             <section class="container">
                 <section class="row">
                     <form class="col s12">
-                        <section class="row center">
+                        <section class="row">
                             <section class="col s1"></section>
                             <section class="input-field col s7">
                                 <i class="material-icons prefix">search</i>
@@ -52,12 +54,14 @@
                                 <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
                                 <label for="icon_presfix2">Search for beer</label>
                             </section>
-                            <section class="col s3 style-search">
-                                <a class="dropdown-trigger btn" href='#' data-target='dropdown1'><i
-                                        class="material-icons right">arrow_drop_down</i>Choose a style!</a>
+                            <section class="col s3">
+                                <button class="dropdown-trigger btn" href='#' data-target='dropdown1'><i
+                                        class="material-icons right">arrow_drop_down</i>Choose a style!</button>
 
                                 <ul id='dropdown1' class='dropdown-content'>
                                     <!-- append list of beer style -->
+                                    <li><a href="#!">one</a></li>
+                                    <li><a href="#!">two</a></li>
                                 </ul>
                             </section>
                         </section>
@@ -74,7 +78,8 @@
                             </section>
                         </section>
                         <section class="row center">
-                            <a class="waves-effect orange accent-3 btn-large beer" href="#">Find My Beer</a>
+                            <button class="waves-effect orange accent-3 btn-large beer-btn" href="#">Find My
+                                Beer</button>
                         </section>
                     </form>
                 </section>
@@ -90,21 +95,19 @@
             <section class="card medium">
                 <section class="card-image waves-effect waves-block waves-light">
                     <!-- beer image: .beer-image -->
-                    <img class="activator beer-image" src="http://placekitten.com/200/300">
+                    <img class="activator beer-image" src="http://placekitten.com/300/240">
                 </section>
                 <section class="card-content">
                     <!-- beer name: .beer-name -->
                     <span class="card-title activator beer-name">
-                        Card Title
+                        Guinness
                         <i class="material-icons right">more_vert</i>
                     </span>
                     <!-- click learn more to add hidden class in card-container and remove hiddren class in beer-info -->
                     <p><a href="#">Learn More</a></p>
                 </section>
                 <section class="card-reveal">
-                    <!-- beer name: .beer-name -->
-                    <span class="card-title grey-text text-darken-4 beer-name">Card Title<i
-                            class="material-icons right">close</i></span>
+                    <span class="card-title"><i class="material-icons right">close</i></span>
                     <!-- beer description: .beer-description -->
                     <p class="beer-description">Here is some more information about this product that is only revealed
                         once clicked on.</p>
@@ -123,7 +126,7 @@
                 <section class="col s6">
                     <section class="row beer-info">
                         <!-- beer name: .beer-name -->
-                        <h3 class="beer-name">Guinness</h3>
+                        <h1 class="beer-name">Guinness</h1>
                         <span>Also known as:
                             <span id="tags">
                                 <!-- beer tags: need to follow the chip section format append more tags in #tags section -->
@@ -139,7 +142,7 @@
                             blanditiis maxime nostrum quo.
                         </p>
                     </section>
-                    <section class="row">
+                    <section class="row values">
                         <section class="col s3">
                             <!-- abv value -->
                             <h2 id="abv-val">10</h2>
@@ -159,43 +162,43 @@
                         </section>
                     </section>
                     <hr>
-                    <section class="row">
+                    <section class="row detail-info">
                         <section class="col s5">
-                            <h5>Hops</h5>
+                            <h4>Hops</h4>
                             <!-- hops info -->
                             <section id="hops"></section>
                         </section>
                         <section class="col s1">
                         </section>
                         <section class="col s5">
-                            <h5>Malts</h5>
+                            <h4>Malts</h4>
                             <!-- malts info -->
                             <section id="malts"></section>
                         </section>
                     </section>
                     <hr>
-                    <section class="row">
+                    <section class="row" id="beer-pair">
                         <section class="col s5">
-                            <h5>Food Pairings</h5>
+                            <h4>Food Pairings</h4>
                             <!-- food pairing list: append list -->
                             <section id="food-pairing"></section>
                         </section>
+                        <section class="col s1"></section>
                         <section class="col s5">
-                            <h5>Glassware</h5>
                             <section class="row" id="glassware">
+                                <h4>Glassware type</h4>
                                 <!-- glassware sample image -->
-                                <section class="col s5" id="glassware-img">
+                                <section id="glassware-img">
+                                    <img src="http://placekitten.com/200/300" />
                                 </section>
-                                <section class="col s5" id="glassware-info">
-                                    <!-- glassware type info: #glassware-type -->
-                                    <h5>Glassware type: <span id="glassware-type"></span></h5>
-                                </section>
+                                <!-- glassware type info: #glassware-type -->
+                                <p id="glassware-type"></p>
                             </section>
                         </section>
                     </section>
                     <hr>
-                    <section class="row">
-                        <h5>Breweries</h5>
+                    <section class="row detail-info">
+                        <h4 class="col s12">Breweries</h4>
                         <!-- append list of possible brewery company in .brewery-name section -->
                         <section class="brewery-name">
                         </section>
@@ -219,6 +222,35 @@
     <script src="https://materializecss.com/extras/noUiSlider/nouislider.js"></script>
     <script src="../script/animate.js"></script>
     <script>
+        var abvSlider = document.getElementById("abv");
+        noUiSlider.create(abvSlider, {
+            start: [4, 7],
+            connect: true,
+            step: 1,
+            orientation: 'horizontal',
+            range: {
+                'min': 3,
+                'max': 13
+            },
+            format: wNumb({
+                decimals: 0
+            })
+        });
+
+        var ibuSlider = document.getElementById("ibu");
+        noUiSlider.create(ibuSlider, {
+            start: [20, 90],
+            connect: true,
+            step: 1,
+            orientation: 'horizontal',
+            range: {
+                'min': 5,
+                'max': 120
+            },
+            format: wNumb({
+                decimals: 0
+            })
+        });
         var slider = document.getElementById("abv");
         slider.addEventListener("click", event => {
             console.log(slider.noUiSlider.get())
