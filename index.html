@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Amatic+SC:wght@700&family=Abel&family=Handlee&display=swap"
+        rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link type="text/css" rel="stylesheet"
-        href="https://materializecss.com/dist/css/materialize.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://materializecss.com/dist/css/materialize.min.css" />
 
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -35,7 +36,7 @@
                     <li><a href="./assets/html/brewery.html">Brewery</a></li>
                     <li><a href="assets/html/contact.html">Contact</a></li>
                 </ul>
-                <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons menu">menu</i></a>
             </section>
         </nav>
 
@@ -43,8 +44,10 @@
             <section class="container">
                 <br><br>
                 <section class="row center" id="btns">
-                    <a class="waves-effect orange accent-3 btn-large beer" href="./assets/html/beer.html">Beer</a>
-                    <a class="waves-effect brown darken-3 btn-large brewery-btn" href="assets/html/brewery.html">Brewery</a>
+                    <button class="waves-effect orange accent-3 btn-large beer-btn"
+                        href="./assets/html/beer.html">Beer</button>
+                    <button class="waves-effect brown darken-3 btn-large brewery-btn"
+                        href="assets/html/brewery.html">Brewery</button>
                 </section>
             </section>
         </section>
@@ -56,7 +59,7 @@
         <section class="section">
             <section class="row center">
                 <section class="col s12">
-                    <h2>Trending</h2>
+                    <h3>Trending</h3>
                 </section>
             </section>
 
@@ -70,8 +73,8 @@
     <section class="parallax-container valign-wrapper">
         <section class="section no-pad-bot">
             <section class="container">
-                <section class="row center">
-                    <h5 class="header col s12 light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim,
+                <section class="center">
+                    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim,
                         laborum corrupti quidem debitis alias, veniam totam eius a, beatae repellendus dolor dolores quo
                         itaque inventore consequatur laboriosam ipsam earum ad.
                     </h5>
@@ -86,10 +89,10 @@
             <section class="row">
                 <section class="col s12 center">
                     <h3><i class="mdi-content-send brown-text"></i></h3>
-                    <h4>Contact Us</h4>
+                    <h3>Contact Us</h3>
                     <section class="row">
                         <section class="col s3"></section>
-                        <form class="col s6">
+                        <form class="col s6 contact">
                             <section class="row">
                                 <section class="input-field col s12">
                                     <input id="name" type="text" class="validate">
@@ -108,7 +111,7 @@
                                     <label for="textarea">Message</label>
                                 </section>
                             </section>
-                            <button class="btn waves-effect" type="submit" name="action">Send
+                            <button class="btn-large waves-effect send-btn" type="submit" name="action">Send
                                 <i class="material-icons right">send</i>
                             </button>
                         </form>
@@ -141,10 +144,20 @@
         </section>
     </footer>
 
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://materializecss.com/dist/js/materialize.js"></script>
     <script src="https://materializecss.com/dist/js/materialize.js"></script>
+    <script src="./assets/script/animate.js"></script>
+    <script>
+        queryURL = `http://api.brewerydb.com/v2/beer/random/?key=5786dc3dcccec8ebd63d41b03597f78e`
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
+        });
+    </script>
     <script src="assets/script/script.js"></script>
 </body>
 

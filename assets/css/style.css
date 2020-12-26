@@ -3,15 +3,29 @@ body {
   height: 100%;
   margin: 0;
   color: #eee5d9;
+  font-family: 'Abel', sans-serif;
+}
+
+nav, h2, h3, .chip {
+  font-family: 'Handlee', cursive;
+}
+
+.card-title, h1, h4 {
+  font-family: 'Shadows Into Light', cursive;
 }
 
 nav {
-  padding: 0 10px;
+  padding: 0 30px;
 }
 
 nav ul a,
- nav .brand-logo {
+ nav .brand-logo, .contact {
   color: #eee5d9;
+}
+
+nav ul a {
+  font-size: 1.3rem;
+  margin: 0 10px;
 }
 
 nav {
@@ -19,7 +33,7 @@ nav {
   box-shadow: none;
 }
 
-.beer:hover {
+.beer-btn:hover {
   color: #6d4c41;
 }
 
@@ -27,9 +41,17 @@ nav {
   color: #ff9100;
 }
 
-.btn-large {
+button, .input-field, .sliders > .col.s5 > p {
+  font-family: 'Amatic SC', cursive;
+  margin: 10px;
+  min-width: 200px;
+  min-height: 70px;
+  padding: 0;
   opacity: 0.8;
-  color:  #eee5d9;
+}
+
+.btn-large {
+  font-size: 2.5rem;
 }
 
 .card {
@@ -37,10 +59,41 @@ nav {
 }
 
 #logo-container {
-  font-family: 'Shadows Into Light', cursive;
+  font-family: 'Handlee', cursive;
 }
 
-footer.page-footer {
+.input-field > label {
+  font-size: 1.3rem;
+}
+
+.input-field input[type]:focus:not([readonly])+label,.input-field textarea:focus:not([readonly])+label {
+  color: #eee5d9;
+  font-size: 2rem;
+  transition: 0.2s ease-in-out;
+}
+
+.input-field input[type]:focus:not([readonly]),
+.input-field textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #eee5d9;
+  box-shadow: 0 1px 0 0 #eee5d9;
+}
+
+.send-btn {
+  background-color: #212121;
+  color: #eee5d9;
+  font-size: 1.7rem;
+  padding: 0 28px;
+  min-width: 130px;
+  min-height: 30px;
+}
+
+.send-btn:hover {
+  background-color: #eee5d9;
+  opacity: 0.5;
+  color: #212121;
+}
+
+.page-footer {
   margin: 0;
 }
 
@@ -54,12 +107,59 @@ footer {
   width: 100%; 
 }
 
-.container {
-  margin-top: 50px;
+@media (max-width: 992px) {
+  #nav-mobile {
+    background-color: rgba(0,0,0,.5);
+    height: 100%;
+    margin-top: 64px;
+    padding: 10px 32px;
+    width: 40%;
+  }
+
+  .sidenav li>a, .menu {
+    color: #eee5d9;
+    font-size: 1.3rem;
+  }
+
+  button {
+    min-height: 40px;
+    min-width: 20%;
+    font-size: 2rem;
+  }
 }
 
-@media only screen and (max-width : 600px) {
+@media (max-width: 600px) {
+  #nav-mobile {
+    margin-top: 56px;
+  }
+
+  .btn-large {
+    font-size: 1.7rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
   #index-banner .section {
     top: 0;
+  }
+}
+
+@media (max-width: 443px) {
+  #logo-container {
+    font-size: 2rem;
+    overflow-x: hidden;
+    white-space: nowrap;
+    padding-left: 20px;
+  }
+
+  .sidenav li>a {
+    padding: 0 10px;
+  }
+
+  .row .col.s6.contact {
+    width: 90%;
+    float: none;
+    margin-left: none;
+    margin: auto;
   }
 }
