@@ -42,6 +42,26 @@
     font-size: inherit;
   }
 
+
+  .tabs .indicator {
+    background-color: #eee5d9;
+  }
+
+  .card .card-content:first-child {
+    background-color: #eee5d9;
+    color: #263238;
+  }
+
+  .tabs .tab a {
+    color: #263238;
+  }
+
+  .tabs .tab a:hover, .tabs .tab a.active, .tabs .tab a:focus, .tabs .tab a:focus.active {
+    background-color: #263238;
+    opacity: 0.9;
+    color: #eee5d9;
+  }
+
   @media (max-width: 600px) {
     .beer-btn, .brewery-btn {
       display: block;
