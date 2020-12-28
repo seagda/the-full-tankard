@@ -59,7 +59,38 @@
         <section class="section">
             <section class="row center">
                 <section class="col s12">
-                    <h3>Trending</h3>
+                    <h3>Beer For the Day</h3>
+                    <h4 id="rand-beer"></h4>
+                    <section class="row">
+                        <section class="col s3"></section>
+                        <section class="col s6">
+                            <section class="card">
+                                <section class="card-content">
+                                    <p id="description"></p>
+                                </section>
+                                <section class="card-tabs">
+                                    <ul class="tabs tabs-fixed-width">
+                                        <li class="tab" id="style-tab"><a href="#style">Style</a></li>
+                                        <li class="tab" id="brewery-tab"><a class="active" href="#brewery">Brewery</a></li>
+                                        <li class="tab"
+                                        id="website-tab"><a href="#website">Website</a></li>
+                                    </ul>
+                                </section>
+                                <section class="card-content">
+                                    <section id="style">
+                                        <h5 id="style-name"></h5>
+                                    </section>
+                                    <section id="brewery">
+                                        <h5 id="brewery-name"></h5>
+                                        <section id="rand-address"></section>
+                                    </section>
+                                    <section id="website">
+                                        <h5 id="url"></h5>
+                                    </section>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
                 </section>
             </section>
 
@@ -87,7 +118,7 @@
     <section class="container">
         <section class="section">
             <section class="row">
-                <section class="col s12 center">
+                <!-- <section class="col s12 center">
                     <h3><i class="mdi-content-send brown-text"></i></h3>
                     <h3>Contact Us</h3>
                     <section class="row">
@@ -116,7 +147,7 @@
                             </button>
                         </form>
                     </section>
-                </section>
+                </section> -->
             </section>
         </section>
     </section>
@@ -146,18 +177,7 @@
 
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://materializecss.com/dist/js/materialize.js"></script>
-    <script src="https://materializecss.com/dist/js/materialize.js"></script>
     <script src="./assets/script/animate.js"></script>
-    <script>
-        queryURL = `http://api.brewerydb.com/v2/beer/random/?key=5786dc3dcccec8ebd63d41b03597f78e`
-
-        $.ajax({
-            url: queryURL,
-            method: "GET"
-        }).then(function (response) {
-            console.log(response);
-        });
-    </script>
     <script src="assets/script/script.js"></script>
 </body>
 

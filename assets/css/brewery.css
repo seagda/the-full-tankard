@@ -6,10 +6,6 @@
     opacity: 0.5;
   }
 
-  .container {
-    margin-top: 50px;
-  }
-
   .input-field .prefix.active {
     color: #eee5d9;
   }

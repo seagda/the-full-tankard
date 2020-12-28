@@ -6,7 +6,7 @@ body {
   font-family: 'Abel', sans-serif;
 }
 
-nav, h2, h3, .chip {
+nav, h2, h3, h5, .chip {
   font-family: 'Handlee', cursive;
 }
 
@@ -33,6 +33,10 @@ nav {
   box-shadow: none;
 }
 
+.container {
+  margin-top: 50px;
+}
+
 .beer-btn:hover {
   color: #6d4c41;
 }
@@ -55,7 +59,7 @@ button, .input-field, .sliders > .col.s5 > p {
 }
 
 .card {
-  background-color: transparent;
+  background-color: #263238;
 }
 
 #logo-container {
@@ -76,21 +80,6 @@ button, .input-field, .sliders > .col.s5 > p {
 .input-field textarea:focus:not([readonly]) {
   border-bottom: 1px solid #eee5d9;
   box-shadow: 0 1px 0 0 #eee5d9;
-}
-
-.send-btn {
-  background-color: #212121;
-  color: #eee5d9;
-  font-size: 1.7rem;
-  padding: 0 28px;
-  min-width: 130px;
-  min-height: 30px;
-}
-
-.send-btn:hover {
-  background-color: #eee5d9;
-  opacity: 0.5;
-  color: #212121;
 }
 
 .page-footer {
