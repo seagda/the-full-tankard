@@ -88,7 +88,7 @@
   }
 
   h1 {
-    margin: 10px 0 20px 0;
+    margin: 10px 0 0 0;
   }
   
   #tags {
@@ -113,6 +113,14 @@
   .hidden {
     display: none !important;
   }
+  
+  #beer-style {
+    font-weight: bolder;
+    }
+
+  #beer-country {
+    font-weight: bolder;
+    }
 
   /* .verticle-br {
     width: 0.75px; 
@@ -234,6 +242,7 @@
     #glassware {
       margin: auto;
     }
+    
   }
 
   @media (max-width: 400px) {
