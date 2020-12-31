@@ -22,20 +22,18 @@
     <section id="index-banner" class="parallax-container">
         <nav role="navigation">
             <section class="nav-wrapper">
-                <a id="logo-container" href="#" class="brand-logo">The Full Tankard</a>
+                <a id="logo-container" href="index.html" class="brand-logo">The Full Tankard</a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="assets/html/article.html">Article</a></li>
                     <li><a href="assets/html/beer.html">Beer</a></li>
-                    <li><a href="assets/html/brewery.html">Brewery</a></li>
+                    <li><a href="assets/html/brewery.html">Brewers</a></li>
+                    <li><a href="assets/html/article.html">News</a></li>
                     <li><a href="assets/html/contact.html">Contact</a></li>
                 </ul>
 
                 <ul id="nav-mobile" class="sidenav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="assets/html/article.html">Article</a></li>
                     <li><a href="assets/html/beer.html">Beer</a></li>
-                    <li><a href="assets/html/brewery.html">Brewery</a></li>
+                    <li><a href="assets/html/brewery.html">Brewers</a></li>
+                    <li><a href="assets/html/article.html">News</a></li>
                     <li><a href="assets/html/contact.html">Contact</a></li>
                 </ul>
                 <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons menu">menu</i></a>
@@ -46,9 +44,9 @@
             <section class="container">
                 <br><br>
                 <section class="row center" id="btns">
-                    <a class="waves-effect orange accent-3 btn-large beer-btn btn" href="assets/html/beer.html">Beer</a>
+                    <a class="waves-effect orange accent-3 btn-large beer-btn btn" href="assets/html/beer.html">Find Beer</a>
                     <a class="waves-effect brown darken-3 btn-large brewery-btn btn"
-                        href="assets/html/brewery.html">Brewery</a>
+                        href="assets/html/brewery.html">Find Brewer</a>
                 </section>
             </section>
         </section>
@@ -60,7 +58,7 @@
         <section class="section">
             <section class="row center">
                 <section class="col s12">
-                    <h3>Beer For the Day</h3>
+                    <h3>Beer of the Day</h3>
                     <h4 id="rand-beer"></h4>
                     <section class="row">
                         <section class="col s3"></section>
@@ -86,7 +84,7 @@
                                         <section id="rand-address"></section>
                                         <a class="waves-effect btn get-direction-btn" id="get-direction"
                                             target="_blank">Get
-                                            Direction</a>
+                                            Directions</a>
                                     </section>
                                     <section id="website">
                                         <h5 id="url"></h5>
@@ -102,8 +100,22 @@
 
     <section class="parallax-container valign-wrapper">
         <section class="section no-pad-bot">
-            <section class="container">
-                <!-- news card goes here -->
+            <section class="container" id="article-container">
+
+<!-- news card goes here -->
+                <section class="card horizontal" id="articles-box">
+                    <section class="card-stacked">
+                        <section id="article-list">
+                            <h3>What's New in Craft Beer</h3>
+
+                        </section>
+                        <section class="row center">
+                            <a class="waves-effect brown darken-3 btn-large brewery-btn btn" href="assets/html/article.html">More News</a>
+                        </section>
+                    </section>
+
+                </section>
+<!-- news card ends -->
             </section>
         </section>
         <section class="parallax background-img2"></section>
@@ -121,6 +133,10 @@
     <script src="https://materializecss.com/dist/js/materialize.js"></script>
     <script src="./assets/script/animate.js"></script>
     <script src="assets/script/script.js"></script>
+    <script>
+
+
+    </script>
 </body>
 
 </html>
