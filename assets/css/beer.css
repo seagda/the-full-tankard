@@ -81,7 +81,7 @@ button.dropdown-trigger, .dropdown-trigger:focus {
 }
 
 .card .card-reveal {
-  background-color: rgba(0, 0, 0, .8);
+  background-color: rgba(0, 0, 0, .95);
 }
 
 .card .card-reveal p {
@@ -118,6 +118,14 @@ h4 {
 
 .hidden {
   display: none !important;
+}
+
+#beer-style {
+  font-weight: bolder;
+}
+
+#beer-country {
+  font-weight: bolder;
 }
 
 /* .verticle-br {

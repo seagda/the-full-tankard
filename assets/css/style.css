@@ -82,6 +82,10 @@ nav {
   color: #eee5d9;
 }
 
+.input-field textarea {
+  color: #eee5d9;
+}
+
 .footer-copyright .container {
   margin-top: 0;
 }
