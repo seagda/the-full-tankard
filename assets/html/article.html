@@ -132,6 +132,10 @@
     <script src="https://materializecss.com/extras/noUiSlider/nouislider.js"></script>
     <script src="../script/animate.js"></script>
     <script>
+
+    
+// Javascript for creating search paramaters
+// Create number of results
         var numberArticle = document.getElementById("number-article");
         noUiSlider.create(numberArticle, {
             start: 40,
@@ -146,6 +150,7 @@
             })
         });
 
+// Create year Range
         var yearRange = document.getElementById("year-range");
         noUiSlider.create(yearRange, {
             start: [20, 90],
@@ -160,6 +165,7 @@
                 decimals: 0
             })
         });
+// Create number of articles from slide selector element
         var slider = document.getElementById("number-article");
         slider.addEventListener("click", event => {
             console.log(slider.noUiSlider.get())
