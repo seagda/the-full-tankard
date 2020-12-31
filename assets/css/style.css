@@ -4,22 +4,40 @@ body {
   margin: 0;
   color: #eee5d9;
   font-family: 'Abel', sans-serif;
+  /* font-family: 'Handlee', cursive; */
 }
 
-nav, h2, h3, h5, .chip {
-  font-family: 'Handlee', cursive;
+.btn, .input-field, .sliders>.col.s5>p {
+  font-family: 'Amatic SC', cursive;
+  margin: 10px;
+  width: 200px;
+  height: 70px;
+  opacity: 0.8;
 }
 
-.card-title, h1, h4 {
-  font-family: 'Shadows Into Light', cursive;
+.link {
+  cursor: pointer;
+  font-family: 'Abel', sans-serif;
+  text-transform: uppercase;
+  border: none;
+  background-color: transparent;
+  color: #ffab40;
+}
+
+.link:hover {
+  color: #ffd180;
+  transition: color .3s ease;
+}
+
+.link:focus {
+  background-color: transparent;
 }
 
 nav {
   padding: 0 30px;
 }
 
-nav ul a,
- nav .brand-logo, .contact {
+nav ul a, nav .brand-logo, .contact {
   color: #eee5d9;
 }
 
@@ -29,57 +47,40 @@ nav ul a {
 }
 
 nav {
-  background-color: rgba(0,0,0,.5);
+  background-color: rgba(0, 0, 0, .5);
   box-shadow: none;
+}
+
+.btn-large {
+  font-size: 2.3rem;
 }
 
 .container {
   margin-top: 50px;
 }
 
-.beer-btn:hover {
-  color: #6d4c41;
-}
-
-.brewery-btn:hover {
-  color: #ff9100;
-}
-
-button, .input-field, .sliders > .col.s5 > p {
-  font-family: 'Amatic SC', cursive;
-  margin: 10px;
-  min-width: 200px;
-  min-height: 70px;
-  padding: 0;
-  opacity: 0.8;
-}
-
-.btn-large {
-  font-size: 2.5rem;
-}
-
 .card {
   background-color: #263238;
 }
 
-#logo-container {
-  font-family: 'Handlee', cursive;
-}
-
-.input-field > label {
+.input-field>label {
   font-size: 1.3rem;
 }
 
-.input-field input[type]:focus:not([readonly])+label,.input-field textarea:focus:not([readonly])+label {
+.input-field input[type]:focus:not([readonly])+label, .input-field textarea:focus:not([readonly])+label {
   color: #eee5d9;
-  font-size: 2rem;
+  font-size: 1.5rem;
   transition: 0.2s ease-in-out;
 }
 
-.input-field input[type]:focus:not([readonly]),
-.input-field textarea:focus:not([readonly]) {
+.input-field input[type]:focus:not([readonly]), .input-field textarea:focus:not([readonly]) {
   border-bottom: 1px solid #eee5d9;
   box-shadow: 0 1px 0 0 #eee5d9;
+  color: #eee5d9;
+}
+
+.footer-copyright .container {
+  margin-top: 0;
 }
 
 .page-footer {
@@ -87,32 +88,30 @@ button, .input-field, .sliders > .col.s5 > p {
 }
 
 footer {
- padding-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 .footer {
   position: absolute;
   bottom: 0;
-  width: 100%; 
+  width: 100%;
 }
 
 @media (max-width: 992px) {
   #nav-mobile {
-    background-color: rgba(0,0,0,.5);
+    background-color: rgba(0, 0, 0, .5);
     height: 100%;
     margin-top: 64px;
     padding: 10px 32px;
     width: 40%;
   }
-
   .sidenav li>a, .menu {
     color: #eee5d9;
     font-size: 1.3rem;
   }
-
   button {
-    min-height: 40px;
-    min-width: 20%;
+    height: 40px;
+    width: 20%;
     font-size: 2rem;
   }
 }
@@ -121,7 +120,6 @@ footer {
   #nav-mobile {
     margin-top: 56px;
   }
-
   .btn-large {
     font-size: 1.7rem;
   }
@@ -140,15 +138,7 @@ footer {
     white-space: nowrap;
     padding-left: 20px;
   }
-
   .sidenav li>a {
     padding: 0 10px;
-  }
-
-  .row .col.s6.contact {
-    width: 90%;
-    float: none;
-    margin-left: none;
-    margin: auto;
   }
 }

@@ -1,14 +1,23 @@
 .send-btn {
-    background-color: #212121;
-    color: #eee5d9;
-    font-size: 1.7rem;
-    padding: 0 28px;
-    min-width: 130px;
-    min-height: 30px;
+  background-color: #212121;
+  color: #eee5d9;
+  font-size: 1.7rem;
+  padding: 0 28px;
+  min-width: 130px;
+  min-height: 30px;
+}
+
+.send-btn:hover {
+  background-color: #eee5d9;
+  opacity: 0.5;
+  color: #212121;
+}
+
+@media (max-width: 443px) {
+  .row .col.s6.contact {
+    width: 90%;
+    float: none;
+    margin-left: none;
+    margin: auto;
   }
-  
-  .send-btn:hover {
-    background-color: #eee5d9;
-    opacity: 0.5;
-    color: #212121;
-  }
+}
