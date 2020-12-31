@@ -40,9 +40,9 @@ $(document).ready(function () {
       $("#url").append(`Visit <a href="${response.records[0].fields.website}" target="_blank" class="link">${response.records[0].fields.name}</a>`);
     }
   });
-});
-
-$("#get-direction").on("click", function () {
-  var link = `http://maps.google.com/maps?q=${encodeURIComponent($("#rand-address").text())}`;
-  $(this).attr("href", link);
+  
+  $("#get-direction").on("click", function () {
+    var link = `http://maps.google.com/maps?q=${encodeURIComponent($("#rand-address").text())}`;
+    $(this).attr("href", link);
+  });
 });

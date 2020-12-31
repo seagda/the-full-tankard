@@ -39,6 +39,7 @@ $(document).ready(function () {
         breweryPhone.text("Phone number: " + response[i].phone);
         $("#phone-num").append(breweryPhone);
         var getDirection = $("<a>").addClass("waves-effect btn get-direction-btn");
+
         getDirection.text("Get Directions");
         cardContent.append(breweryName);
         cardContent.append(breweryStreet);
@@ -49,6 +50,7 @@ $(document).ready(function () {
         var cardAction = $("<a target='_blank'>").addClass("card-action link");
         cardAction.text("Visit Website");
         cardAction.attr("href", response[i].website_url);
+        
         cardStacked.append(cardContent);
         cardStacked.append(cardAction);
         card.append(cardStacked);

@@ -28,6 +28,7 @@ $(document).ready(function () {
                 beerCardTitleActivator.append(beerIClass);
                 beerCardContent.append(beerCardTitleActivator);
 
+
                 var learnMoreLink = $("<button class='link'>Learn More</button>");
                 var currentResponse = response.records[i];
                 learnMoreLink.click({ param: currentResponse }, generateBeerInfo);
@@ -47,7 +48,6 @@ $(document).ready(function () {
                 beerDescription.text(response.records[i].fields.descript);
                 beerCardReveal.append(beerDescription);
             }
-
         });
     });
 
@@ -74,6 +74,7 @@ $(document).ready(function () {
         var learnMoreBreweryName = event.data.param.fields.name_breweries;
         $("#brewery-name").text("Breweries: " + learnMoreBreweryName);
     }
+
 
     // TODO: save user input in local storage
 });
