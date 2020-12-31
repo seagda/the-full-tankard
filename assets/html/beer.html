@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Abel&family=Handlee&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Abel&family=Handlee&display=swap"
         rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -91,149 +90,93 @@
     </section>
 
     <section class="container">
-        <!-- toggle hidden class -->
-        <section class="" id="card-container">
+        <section id="card-container">
             <!-- card format(need to follow the class names to generate the same card) -->
             <section class="card medium">
-                <section class="card-image waves-effect waves-block waves-light">
-                    <!-- beer image: .beer-image -->
-                    <img class="activator beer-image" src="http://placekitten.com/300/240">
-                </section>
                 <section class="card-content">
                     <!-- beer name: .beer-name -->
-                    <span class="card-title activator beer-name">
+                    <p class="card-title activator beer-name">
                         Guinness
                         <i class="material-icons right">more_vert</i>
-                    </span>
-                    <!-- click learn more to add hidden class in card-container and remove hiddren class in beer-info -->
-                    <button class="link">Learn More</button>
+                    </p>
+                    <section class="detail-info">
+                        <!-- beer style: .style -->
+                        <p class="style">ipa</p>
+
+                        <!-- beer country: .country -->
+                        <p class="country">united states</p>
+
+                        <!-- beer abv: .abv -->
+                        <p class="abv">10</p>
+
+                        <!-- beer ibu: .ibu -->
+                        <p class="ibu">10</p>
+
+                        <!-- beer description: .brief-descript -->
+                        <p class="brief-descript activator">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Error
+                            similique atque ipsa, sapiente optio et at, blanditiis consequuntur voluptate magni vitae
+                            eos ut placeat nihil tenetur nisi. Ullam, saepe est?</p>
+                    </section>
                 </section>
                 <section class="card-reveal">
                     <span class="card-title"><i class="material-icons right">close</i></span>
-                    <!-- beer description: .beer-description -->
-                    <p class="beer-description">Here is some more information about this product that is only revealed
+                    <!-- beer description: .full-descript -->
+                    <p class="full-descript">Here is some more information about this product that is only
+                        revealed
                         once clicked on.</p>
                 </section>
             </section>
         </section>
-
-        <!-- toggle hidden class -->
-        <section class="hidden" id="beer-info">
-            <section class="row">
-                <section class="col s5">
-                    <!-- beer image: .beer-image -->
-                    <img class="materialboxed beer-image" width="400" src="http://placekitten.com/100/150">
-                </section>
-                <section class="col s1"></section>
-                <section class="col s6">
-                    <section class="row beer-info">
-                        <!-- beer name: .beer-name -->
-                        <h1 class="beer-name">Guinness</h1>
-                        <hr>
-                        <span>Beer Style:
-                            <span id="tags">
-                                <!-- beer tags: need to follow the chip section format append more tags in #tags section -->
-                                <section class="chip" id="beer-style">
-                                    irish_dry_stout
-                                </section>
-                            </span>
-                        </span>
-                        <br>
-                        <span>Country of Origin:
-                            <span id="tags">
-                                <!-- beer tags: need to follow the chip section format append more tags in #tags section -->
-                                <section class="chip" id="beer-country">
-                                    irish_dry_stout
-                                </section>
-                            </span>
-                        </span>
-                        <!-- beer description: .beer-description -->
-                        <hr>
-                        <p class="beer-description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias consequatur quis sint,
-                            nam enim eaque maiores modi iure libero, dicta animi tenetur fugit error sed. Veritatis
-                            blanditiis maxime nostrum quo.
-                        </p>
-                    </section>
-                    <section class="row values">
-                        <section class="col s3">
-                            <!-- abv value -->
-                            <h2 id="abv-val">10</h2>
-                            <p>ABV</p>
-                        </section>
-                        <section class="col s1"></section>
-                        <section class="col s3">
-                            <!-- ibu value -->
-                            <h2 id="ibu-val">10</h2>
-                            <p>IBU</p>
-                        </section>
-                        <section class="col s1"></section>
-                        <section class="col s3">
-                            <!-- srm value -->
-                            <h2 id="srm-val">10</h2>
-                            <p>SRM</p>
-                        </section>
-                    </section>
-                    <hr>
-                    <section class="row detail-info"> 
-                        <h4 class="col s12" id="brewery-name">Breweries:</h4>
-                        <!-- append list of possible brewery company in .brewery-name section -->
-                        <section class="brewery-name">
-                        </section>
-                    </section>
+        
+        <footer class="page-footer grey darken-4">
+            <section class="footer-copyright">
+                <section class="container">
+                    Made by <a class="brown-text text-lighten-3" href="">Elias Calagiu, Rita Z., Shea Mullaney</a>
                 </section>
             </section>
-        </section>
-    </section>
+        </footer>
 
-    <footer class="page-footer grey darken-4">
-        <section class="footer-copyright">
-            <section class="container">
-                Made by <a class="brown-text text-lighten-3" href="">Elias Calagiu, Rita Z., Shea Mullaney</a>
-            </section>
-        </section>
-    </footer>
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://materializecss.com/dist/js/materialize.js"></script>
+        <script src="https://materializecss.com/extras/noUiSlider/nouislider.js"></script>
+        <script src="../script/animate.js"></script>
+        <script>
+            var abvSlider = document.getElementById("abv");
+            noUiSlider.create(abvSlider, {
+                start: [4, 7],
+                connect: true,
+                step: 1,
+                orientation: 'horizontal',
+                range: {
+                    'min': 3,
+                    'max': 13
+                },
+                format: wNumb({
+                    decimals: 0
+                })
+            });
 
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://materializecss.com/dist/js/materialize.js"></script>
-    <script src="https://materializecss.com/extras/noUiSlider/nouislider.js"></script>
-    <script src="../script/animate.js"></script>
-    <script>
-        var abvSlider = document.getElementById("abv");
-        noUiSlider.create(abvSlider, {
-            start: [4, 7],
-            connect: true,
-            step: 1,
-            orientation: 'horizontal',
-            range: {
-                'min': 3,
-                'max': 13
-            },
-            format: wNumb({
-                decimals: 0
+            var ibuSlider = document.getElementById("ibu");
+            noUiSlider.create(ibuSlider, {
+                start: [20, 90],
+                connect: true,
+                step: 1,
+                orientation: 'horizontal',
+                range: {
+                    'min': 5,
+                    'max': 120
+                },
+                format: wNumb({
+                    decimals: 0
+                })
+            });
+            var slider = document.getElementById("abv");
+            slider.addEventListener("click", event => {
+                console.log(slider.noUiSlider.get())
             })
-        });
-
-        var ibuSlider = document.getElementById("ibu");
-        noUiSlider.create(ibuSlider, {
-            start: [20, 90],
-            connect: true,
-            step: 1,
-            orientation: 'horizontal',
-            range: {
-                'min': 5,
-                'max': 120
-            },
-            format: wNumb({
-                decimals: 0
-            })
-        });
-        var slider = document.getElementById("abv");
-        slider.addEventListener("click", event => {
-            console.log(slider.noUiSlider.get())
-        })
-    </script>
-    <script src="../script/beer.js"></script>
+        </script>
+        <script src="../script/beer.js"></script>
 </body>
 
 </html>
