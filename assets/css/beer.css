@@ -118,6 +118,14 @@ h4 {
   display: none !important;
 }
 
+#beer-style {
+  font-weight: bolder;
+}
+
+#beer-country {
+  font-weight: bolder;
+}
+
 /* .verticle-br {
     width: 0.75px; 
     height: 150px;

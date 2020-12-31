@@ -129,15 +129,26 @@
                     <section class="row beer-info">
                         <!-- beer name: .beer-name -->
                         <h1 class="beer-name">Guinness</h1>
-                        <span>Also known as:
+                        <hr>
+                        <span>Beer Style:
                             <span id="tags">
                                 <!-- beer tags: need to follow the chip section format append more tags in #tags section -->
-                                <section class="chip">
+                                <section class="chip" id="beer-style">
+                                    irish_dry_stout
+                                </section>
+                            </span>
+                        </span>
+                        <br>
+                        <span>Country of Origin:
+                            <span id="tags">
+                                <!-- beer tags: need to follow the chip section format append more tags in #tags section -->
+                                <section class="chip" id="beer-country">
                                     irish_dry_stout
                                 </section>
                             </span>
                         </span>
                         <!-- beer description: .beer-description -->
+                        <hr>
                         <p class="beer-description">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias consequatur quis sint,
                             nam enim eaque maiores modi iure libero, dicta animi tenetur fugit error sed. Veritatis
@@ -164,43 +175,8 @@
                         </section>
                     </section>
                     <hr>
-                    <section class="row detail-info">
-                        <section class="col s5">
-                            <h4>Hops</h4>
-                            <!-- hops info -->
-                            <section id="hops"></section>
-                        </section>
-                        <section class="col s1">
-                        </section>
-                        <section class="col s5">
-                            <h4>Malts</h4>
-                            <!-- malts info -->
-                            <section id="malts"></section>
-                        </section>
-                    </section>
-                    <hr>
-                    <section class="row" id="beer-pair">
-                        <section class="col s5">
-                            <h4>Food Pairings</h4>
-                            <!-- food pairing list: append list -->
-                            <section id="food-pairing"></section>
-                        </section>
-                        <section class="col s1"></section>
-                        <section class="col s5">
-                            <section class="row" id="glassware">
-                                <h4>Glassware type</h4>
-                                <!-- glassware sample image -->
-                                <section id="glassware-img">
-                                    <img src="http://placekitten.com/200/300" />
-                                </section>
-                                <!-- glassware type info: #glassware-type -->
-                                <p id="glassware-type"></p>
-                            </section>
-                        </section>
-                    </section>
-                    <hr>
-                    <section class="row detail-info">
-                        <h4 class="col s12">Breweries</h4>
+                    <section class="row detail-info"> 
+                        <h4 class="col s12" id="brewery-name">Breweries:</h4>
                         <!-- append list of possible brewery company in .brewery-name section -->
                         <section class="brewery-name">
                         </section>
@@ -257,7 +233,7 @@
             console.log(slider.noUiSlider.get())
         })
     </script>
-    <script src="../script/script.js"></script>
+    <script src="../script/beer.js"></script>
 </body>
 
 </html>
