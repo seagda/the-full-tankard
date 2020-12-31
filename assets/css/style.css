@@ -9,6 +9,9 @@ body {
 
 .btn, .input-field, .sliders>.col.s5>p {
   font-family: 'Amatic SC', cursive;
+}
+
+.btn {
   margin: 10px;
   width: 200px;
   height: 70px;

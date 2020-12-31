@@ -62,6 +62,8 @@ button.dropdown-trigger, .dropdown-trigger:focus {
 .sliders>.col.s5>p {
   text-align: center;
   font-weight: 900;
+  font-size: 1.3rem;
+  margin-top: 10px;
 }
 
 .beer-btn:hover {
