@@ -27,7 +27,7 @@
                 <a id="logo-container" href="../../index.html" class="brand-logo">The Full Tankard</a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="../../index.html">Home</a></li>
-                    <li><a href="#">Article</a></li>
+                    <li><a href="./article.html">Article</a></li>
                     <li><a href="./beer.html">Beer</a></li>
                     <li><a href="./brewery.html">Brewery</a></li>
                     <li><a href="./contact.html">Contact</a></li>
@@ -35,7 +35,7 @@
 
                 <ul id="nav-mobile" class="sidenav">
                     <li><a href="../../index.html">Home</a></li>
-                    <li><a href="#">Article</a></li>
+                    <li><a href="./article.html">Article</a></li>
                     <li><a href="./beer.html">Beer</a></li>
                     <li><a href="./brewery.html">Brewery</a></li>
                     <li><a href="./contact.html">Contact</a></li>
@@ -83,7 +83,10 @@
     </section>
 
     <section class="container">
-        <section class="row">
+        <section class="row" id="article-row">
+<!-- TODO: Append results cards here -->
+ 
+<!-- TODO: replace these with generated cars from JQUERY code -->       
             <section class="col s12 m6">
                 <section class="card">
                     <section class="card-content white-text">
@@ -99,6 +102,8 @@
                     </section>
                 </section>
             </section>
+<!-- TODO: replace these with generated cars from JQUERY code -->   
+
             <section class="col s12 m6">
                 <section class="card">
                     <section class="card-content white-text">
@@ -127,6 +132,10 @@
     <script src="https://materializecss.com/extras/noUiSlider/nouislider.js"></script>
     <script src="../script/animate.js"></script>
     <script>
+
+    
+// Javascript for creating search paramaters
+// Create number of results
         var numberArticle = document.getElementById("number-article");
         noUiSlider.create(numberArticle, {
             start: 40,
@@ -141,6 +150,7 @@
             })
         });
 
+// Create year Range
         var yearRange = document.getElementById("year-range");
         noUiSlider.create(yearRange, {
             start: [20, 90],
@@ -155,6 +165,7 @@
                 decimals: 0
             })
         });
+// Create number of articles from slide selector element
         var slider = document.getElementById("number-article");
         slider.addEventListener("click", event => {
             console.log(slider.noUiSlider.get())
