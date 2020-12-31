@@ -9,6 +9,9 @@ body {
 
 .btn, .input-field, .sliders>.col.s5>p {
   font-family: 'Amatic SC', cursive;
+}
+
+.btn {
   margin: 10px;
   width: 200px;
   height: 70px;
@@ -76,6 +79,10 @@ nav {
 .input-field input[type]:focus:not([readonly]), .input-field textarea:focus:not([readonly]) {
   border-bottom: 1px solid #eee5d9;
   box-shadow: 0 1px 0 0 #eee5d9;
+  color: #eee5d9;
+}
+
+.input-field textarea {
   color: #eee5d9;
 }
 
