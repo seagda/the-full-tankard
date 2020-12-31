@@ -6,7 +6,6 @@ $(document).ready(function () {
     url: queryURL,
     method: "GET"
   }).then(function (response) {
-    console.log(response);
     $("#rand-beer").text(response.records[0].fields.name);
 
     if (response.records[0].fields.descript === undefined) {
@@ -38,15 +37,19 @@ $(document).ready(function () {
     if (response.records[0].fields.website === undefined) {
       $("#url").text("website not avaliable");
     } else {
-      $("#url").append(`Visit <a href="${response.records[0].fields.website}" target="_blank">${response.records[0].fields.name}</a>`);
+      $("#url").append(`Visit <a href="${response.records[0].fields.website}" target="_blank" class="link">${response.records[0].fields.name}</a>`);
     }
+  });
 
+  $("#get-direction").on("click", function () {
+    var link = `http://maps.google.com/maps?q=${encodeURIComponent($("#rand-address").text())}`;
+    $(this).attr("href", link);
   });
 
 
 
   //   // create a click event listerer function that displays results from user input
-  $(".brewery-btn").click(function (event) {
+  $("#brewery-btn").click(function (event) {
     event.preventDefault();
     var Brewery = $("#icon_prefix2").val();
 
@@ -86,7 +89,6 @@ $(document).ready(function () {
         card.append(cardStacked);
         $(".container").append(card);
       }
-
     });
   });
 });
