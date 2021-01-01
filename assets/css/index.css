@@ -99,3 +99,15 @@ a.get-direction-btn:hover {
     margin-top: 150px;
   }
 }
+
+#articles-box {
+  margin: 10px 0;
+  border: 2px solid white;
+  padding: 20px;
+  font-size: 1.5rem;
+  background:rgba(241, 225, 191, 0.75);
+}
+
+#articles-box h3 {
+  color: #263238;
+}
