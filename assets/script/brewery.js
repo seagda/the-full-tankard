@@ -5,23 +5,35 @@ $(document).ready(function () {
 
     var queryURLBrewery = "https://api.openbrewerydb.org/breweries?"
 
+<<<<<<< HEAD
     var breweryCity = $("#region-keyword").val();
     var brewery = $("#brewer-keyword").val();
+=======
+    var breweryCity = $("#search-by-city").val();
+    var breweryState = $("#search-by-state").val();
+    var breweryName = $("#search-by-name").val();
+    console.log(breweryName);
+>>>>>>> 9ddbf8a3d327ac7b876c9d3921db069f91c416ab
 
     if (breweryCity !== "") {
       queryURLBrewery += "by_city=" + breweryCity + "&"
     };
 
-    if (brewery !== "") {
-      queryURLBrewery += "by_name=" + brewery;
-
+    if (breweryState !== "") {
+      queryURLBrewery += "by_state=" + breweryState; + "&"
     };
+
+    if (breweryName !== "") {
+      queryURLBrewery += "by_name=" + breweryName;
+    };
+
 
     $.ajax({
       url: queryURLBrewery,
       method: "GET"
     }).then(function (response) {
       for (var i = 0; i < response.length; i++) {
+
         var card = $("<section>").addClass("card horizontal");
         var cardImage = $("<section>").addClass("card-image");
         var cardStacked = $("<section>").addClass("card-stacked");
@@ -38,15 +50,35 @@ $(document).ready(function () {
         var breweryPhone = $("<h6>").addClass("phone-num");
         breweryPhone.text("Phone number: " + response[i].phone);
         $("#phone-num").append(breweryPhone);
-        var getDirection = $("<a>").addClass("waves-effect btn get-direction-btn");
 
-        getDirection.text("Get Directions");
+        var getDirections = $("<a>").addClass("waves-effect btn get-directions-btn");
+        getDirections.text("Get Directions");
+
+        var passToMaps = "";
+        console.log(response);
+        console.log(response[i].street);
+
+            if (response[i].street !== undefined) {
+              passToMaps += response[i].street + ", ";
+            }
+            if (response[i].city !== undefined) {
+              passToMaps += response[i].city + ", ";
+            }
+            if (response[i].state !== undefined) {
+              passToMaps += response[i].state;
+            }
+        
+
+        var link = `http://maps.google.com/maps?q=${encodeURIComponent(passToMaps)}`;
+        console.log(link);
+        getDirections.attr("href", link);
+
         cardContent.append(breweryName);
         cardContent.append(breweryStreet);
         cardContent.append(breweryPhone);
-        cardContent.append(getDirection);
+        cardContent.append(getDirections);
 
-        // TODO: Figure out how to link this href such that when you click on the link it redirects you to the brewery's website
+        //  Link to the brewery's website
         var cardAction = $("<a target='_blank'>").addClass("card-action link");
         cardAction.text("Visit Website");
         cardAction.attr("href", response[i].website_url);

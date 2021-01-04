@@ -2,7 +2,7 @@
   background: url(https://images.unsplash.com/photo-1445140463371-d8036feedc2f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1952&q=80) no-repeat center center fixed;
   background-size: cover;
   width: 100%;
-  overflow: hidden;
+  overflow: auto;
   opacity: 0.5;
 }
 
@@ -19,7 +19,7 @@
   height: 300px;
 }
 
-a.get-direction-btn {
+a.get-directions-btn {
   margin: 10px 0;
   padding-top: 3px;
   height: 40px;
@@ -28,7 +28,7 @@ a.get-direction-btn {
   background-color: #546e7a;
 }
 
-a.get-direction-btn:hover {
+a.get-directions-btn:hover {
   background-color: #eee5d9;
   color: #546e7a;
 }
