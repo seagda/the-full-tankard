@@ -153,7 +153,7 @@
                 step: 1,
                 orientation: 'horizontal',
                 range: {
-                    'min': 0,
+                    'min': 3,
                     'max': 13
                 },
                 format: wNumb({
@@ -168,7 +168,7 @@
                 step: 1,
                 orientation: 'horizontal',
                 range: {
-                    'min': 0,
+                    'min': 5,
                     'max': 120
                 },
                 format: wNumb({
@@ -177,7 +177,7 @@
             });
             var slider = document.getElementById("abv");
             slider.addEventListener("click", event => {
-                // console.log(slider.noUiSlider.get())
+                console.log(slider.noUiSlider.get())
             })
         </script>
         <script src="../script/beer.js"></script>

@@ -51,7 +51,6 @@ $(document).ready(function () {
             url: queryURLBeer,
             method: "GET"
         }).then(function (response) {
-  
             for (var i = 0; i < response.records.length; i++) {
                 var beerCardMedium = $("<section>").addClass("card medium");
                 $("#card-container").append(beerCardMedium);
@@ -148,13 +147,5 @@ $(document).ready(function () {
                 beerCardReveal.append(beerDescription);
             };
         });
-  
     });
-  
-    // 
-    //  user dropdownSelection goes here
-  
-  
-    //     // TODO: save user input in local storage
-  
-  });
+});

@@ -6,7 +6,6 @@ $(document).ready(function () {
     url: queryURL,
     method: "GET"
   }).then(function (response) {
-    console.log(response);
     $("#rand-beer").text(response.records[0].fields.name);
 
     if (response.records[0].fields.descript === undefined) {
@@ -38,14 +37,49 @@ $(document).ready(function () {
     if (response.records[0].fields.website === undefined) {
       $("#url").text("website not avaliable");
     } else {
-      $("#url").append(`Visit <a href="${response.records[0].fields.website}" target="_blank">${response.records[0].fields.name}</a>`);
+      $("#url").append(`Visit <a href="${response.records[0].fields.website}" target="_blank" class="link">${response.records[0].fields.name}</a>`);
     }
+  });
+  
+  $("#get-direction").on("click", function () {
+    var link = `http://maps.google.com/maps?q=${encodeURIComponent($("#rand-address").text())}`;
+    $(this).attr("href", link);
   });
 });
 
-  
-  
+// Get data for Articles from ContextualWebSearch API
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/NewsSearchAPI?q=beer%20Pacific%Northwest&pageNumber=1&pageSize=10&autoCorrect=true&fromPublishedDate=2020-01-01&toPublishedDate=2021-12-31",
+  "method": "GET",
+  "headers": {
+      "x-rapidapi-key": "045e0eb614mshe7dc79e7fe14caep1a845ejsnbb288956f7e2",
+      "x-rapidapi-host": "contextualwebsearch-websearch-v1.p.rapidapi.com"
+  }
+};
 
+$.ajax(settings).done(function (response) {
 
+// get unsorted results from query
+  var unsortedList = response.value;
+// sort by date, descending
+  function sortByDateDesc(unsortedList, datePublished) {
+      return unsortedList.sort(function (a, b) {
+          var x = a.datePublished; var y = b.datePublished;
+          return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+      });
+  }
+  var sortedList = sortByDateDesc(unsortedList);
+//        console.log(sortedList);
+// append the sorted articles to the homepage
+  for (i = 0; i < 10; i++) {
+      var origTitle = sortedList[i].title;
+      var origDate = sortedList[i].datePublished;
+      var articleTitle = origTitle.substring(0, 60);
+      var articleSrc = sortedList[i].url;
+      var articleDate = origDate.substring(0, 10);
+      $("#article-list").append(`<p>${articleDate} - <a href="${articleSrc}" target="_blank">${articleTitle}</a>...`);
+  };
 
-  
+});

@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
-        href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Abel&family=Handlee&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Amatic+SC:wght@700&family=Abel&family=Handlee&display=swap"
         rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link type="text/css" rel="stylesheet" href="https://materializecss.com/dist/css/materialize.min.css" />
 
-    <link rel="stylesheet" href="../css/brewery.css">
+    <link rel="stylesheet" href="https://materializecss.com/extras/noUiSlider/nouislider.css">
+
+    <link rel="stylesheet" href="../css/article.css">
     <link rel="stylesheet" href="../css/style.css">
     <title>The Full Tankard</title>
 </head>
@@ -38,71 +40,67 @@
                     <li><a href="./article.html">Articles</a></li>
                     <li><a href="./contact.html">Contact</a></li>
                 </ul>
-                <a href="./brewery.html" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             </section>
         </nav>
 
         <section class="section no-pad-bot search-engine">
             <section class="container">
-              <!--  <br><br> -->
                 <section class="row">
-                    <form class="col s12">
+<!-- Search form starts here -->
+                    <form class="col s12" id="article-search">
                         <section class="row">
                             <section class="col s2"></section>
                             <section class="input-field col s8">
                                 <i class="material-icons prefix">search</i>
-                                <!-- user input -->
-                                <textarea id="search-by-name" class="materialize-textarea"></textarea>
-                                <label for="search-by-name">Search by Brewery Name</label>
+                                <textarea id="article-keyword" class="materialize-textarea"></textarea>
+                                <label for="article-keyword">Search by keyword</label>
                             </section>
                         </section>
-                        <section class="row">
-                            <section class="col s2"></section>
-                            <section class="input-field col s8">
-                                <i class="material-icons prefix">location_city</i>
-                                <!-- user input -->
-                                <textarea id="search-by-city" class="materialize-textarea"></textarea>
-                                <label for="search-by-city">Search by City</label>
+                        <section class="row sliders">
+                            <section class="col s1"></section>
+                            <section class="col s5">
+                                <section id="number-article"></section>
+                                <p>Number of Articles</p>
                             </section>
-                        </section>
-                        <section class="row">
-                            <section class="col s2"></section>
-                            <section class="input-field col s8">
-                                <i class="material-icons prefix">place
-                                </i>
-                                <textarea id="search-by-state" class="materialize-textarea"></textarea>
-                                <label for="search-by-state">Search by State</label>
+                            <section class="col s5">
+                                <section id="year-range"></section>
+                                <p>Year Range</p>
                             </section>
                         </section>
                         <section class="row center">
-                            <button class="waves-effect brown darken-3 btn-large brewery-btn btn" href="#">Find
-                                Brewery</button>
+                            <button class="waves-effect blue-grey darken-4 btn-large article-btn btn" id="article-button">Find
+                                Articles</button>
                         </section>
                     </form>
-
                 </section>
             </section>
         </section>
-        <section class="parallax brewery"></section>
+        <section class="parallax article"></section>
     </section>
 
-    <section class="container" id="brewery-card-container">
-<!-- Append Brewery results here -->
-
+    <section class="container">
+        <section class="row" id="article-row">
+<!-- Append results cards below here -->
+ 
+        
+       
+        </section>
     </section>
 
     <footer class="page-footer grey darken-4">
         <section class="footer-copyright">
             <section class="container">
-                Made by <a class="brown-text text-lighten-3" href="">Elias Calagiu, Rita Z., Shea Mullaney</a>
+                Made by <span class="brown-text text-lighten-3" href="">Elias Calagiu, Rita Z., Shea Mullaney</span>
             </section>
         </section>
     </footer>
 
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://materializecss.com/dist/js/materialize.js"></script>
+    <script src="https://materializecss.com/extras/noUiSlider/nouislider.js"></script>
     <script src="../script/animate.js"></script>
-    <script src="../script/brewery.js"></script>
+    <script src="../script/article.js"></script>
 </body>
 
 </html>

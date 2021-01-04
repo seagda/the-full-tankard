@@ -1,252 +1,233 @@
-  .beer-wall {
-    background: url(https://images.unsplash.com/photo-1505075106905-fb052892c116?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80) no-repeat center center fixed;
-    background-size: cover;
+.beer-wall {
+  background: url(https://images.unsplash.com/photo-1505075106905-fb052892c116?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80) no-repeat center center fixed;
+  background-size: cover;
+  width: 100%;
+  overflow: hidden;
+  opacity: 0.5;
+}
+
+.search-engine {
+  margin-top: 30px;
+}
+
+.input-field .prefix.active {
+  color: #eee5d9;
+}
+
+button.dropdown-trigger, .dropdown-trigger:focus {
+  background-color: rgba(0, 0, 0, .8);
+  color: #eee5d9;
+  font-size: 1.5rem;
+  height: 40px;
+}
+
+.dropdown-trigger:hover {
+  background-color: #eee5d9;
+  opacity: 0.8;
+  color: rgba(0, 0, 0, .8);
+}
+
+.dropdown-content {
+  background-color: #212121;
+}
+
+.dropdown-content li>a {
+  color: #eee5d9;
+}
+
+.dropdown-content li>a:hover {
+  background-color: #eee5d9;
+  color: #212121;
+}
+
+.dropdown-trigger {
+  margin-top: 25px;
+}
+
+.noUi-tooltip span {
+  position: relative;
+  font-size: 15px;
+  top: 0;
+}
+
+.noUi-origin, .noUi-target.noUi-ltr.noUi-horizontal .noUi-tooltip, .noUi-connect, .noUi-active {
+  background-color: #546e7a;
+}
+
+.sliders {
+  margin-bottom: 0;
+  margin-top: 40px;
+}
+
+.sliders>.col.s5>p {
+  text-align: center;
+  font-weight: 900;
+  font-size: 1.3rem;
+  margin-top: 10px;
+}
+
+.beer-btn:hover {
+  color: #6d4c41;
+}
+
+.card {
+  width: 30%;
+  display: inline-block;
+  margin: 10px;
+}
+
+.link {
+  padding-left: 0;
+}
+
+.card .card-reveal {
+  background-color: rgba(0, 0, 0, .95);
+}
+
+.card .card-reveal p {
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.activator {
+  cursor: pointer;
+}
+
+/* .beer-info {
+  margin-bottom: 0;
+} */
+
+/* h1 {
+  margin: 10px 0 20px 0;
+}
+
+#tags {
+  margin-left: 10px;
+}
+
+.col.s3>h2, .col.s3>p {
+  margin: 0;
+  text-align: center;
+}
+
+h4 {
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 1.75rem;
+}
+
+#glassware {
+  width: 220px;
+}
+
+.hidden {
+  display: none !important;
+} */
+
+#beer-style {
+  font-weight: bolder;
+}
+
+#beer-country {
+  font-weight: bolder;
+}
+
+@media (max-width: 1199px) {
+  /* .materialboxed {
+    width: 300px;
+  }
+  #beer-pair.row .col.s5 {
     width: 100%;
-    overflow: hidden;
-    opacity: 0.5;
+    display: block;
   }
-  
-  .search-engine {
-    margin-top: 30px;
-  }
-
-  .input-field .prefix.active {
-    color: #eee5d9;
-  }
-
-  .dropdown-trigger, .dropdown-trigger.btn:focus {
-    background-color: rgba(0,0,0,.8);
-    color: #eee5d9;
-    font-size: 1.5rem;
-    min-height: 40px;
-  }
-
-  .dropdown-trigger.btn:hover {
-    background-color: #eee5d9;
-    opacity: 0.8;
-    color: rgba(0,0,0,.8);
-  }
-
-  .dropdown-content {
-    background-color: #212121;
-  }
-
-  .dropdown-content li > a {
-    color: #eee5d9;
-  }
-
-  .dropdown-content li > a:hover {
-    background-color:#eee5d9;
-    color: #212121;
-  }
-
-  .dropdown-trigger {
-    margin-top: 25px;
-  }
-  
-  .noUi-tooltip span {
-    position: relative;
-    font-size: 15px;
-    top: 0;
-  }
-
-  .noUi-origin, .noUi-target.noUi-ltr.noUi-horizontal .noUi-tooltip, .noUi-connect, .noUi-active {
-    background-color: #546e7a;
-  }
-  
-  .sliders {
-    margin-bottom: 0;
-    margin-top: 40px;
-  }
-
-  .sliders > .col.s5 > p {
-    text-align: center;
-    font-weight: 900;
-  }
-  
-  .row .col.s4 {
-    width: 250px;
-  }
-  
-  .card {
-    width: 30%;
-    display: inline-block;
-    margin: 10px;
-  }
-
-  .card .card-reveal {
-    background-color: rgba(0,0,0,.8);
-  }
-
-  .card .card-reveal p {
-    font-size: 20px;
-    line-height: 1.25;
-  }
-  
-  .beer-info {
-    margin-bottom: 0;
-  }
-
-  h1 {
-    margin: 10px 0 0 0;
-  }
-  
-  #tags {
-    margin-left: 10px;
-  }
-  
-  .col.s3 > h2, .col.s3 > p {
-    margin: 0;
-    text-align: center;
-  }
-
-  h4 {
-    overflow: hidden;
-    white-space: nowrap;
-    font-size: 1.75rem;
-  }
-
   #glassware {
-    width: 220px;
-  }
-
-  .hidden {
-    display: none !important;
-  }
-  
-  #beer-style {
-    font-weight: bolder;
-    }
-
-  #beer-country {
-    font-weight: bolder;
-    }
-
-  /* .verticle-br {
-    width: 0.75px; 
-    height: 150px;
+    margin: 0;
   } */
+}
 
-  @media (max-width: 1199px) {
-    .materialboxed {
-      width: 300px;
-    }
-
-    #beer-pair.row .col.s5 {
-      width: 100%;
-      display: block;
-    }
-
-    #glassware {
-      margin: 0;
-    }
+@media (max-width: 992px) {
+  #beer-info .row .col.s5, .row .input-field.col.s7, .dropdown-trigger, .sliders .col.s5 {
+    display: block;
   }
-
-  @media (max-width: 992px) {
-    #beer-info .row .col.s5, .row .input-field.col.s7, .dropdown-trigger, .sliders .col.s5 {
-      display: block;
-    }
-
-    #beer-info .row .col.s5, .dropdown-trigger {
-      width: 100%;
-    }
-
-    .row .input-field.col.s7 {
-      width: 80%;
-    }
-
-    .dropdown-trigger {
-      margin-top: 0;
-    }
-
-    .search-engine {
-      margin: auto;
-      height: 450px;
-      position: relative;
-    }
-
-    .dropdown-trigger {
-      position: absolute;
-      width: 20%;
-      top: 35%;
-    }
-
-    .dropdown-trigger, button.waves-effect {
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .sliders {
-      margin-top: 60px;
-    }
-
-    .sliders .col.s5, button.waves-effect {
-      position: absolute;
-    }
-
-    .sliders .col.s5 {
-      width: 70%;
-    }
-
-    .sliders .col.s5:nth-child(2) {
-      left: 15%;
-    }
-
-    .sliders .col.s5:nth-child(3) {
-      top: 60%;
-      left: 15%;
-    }
-
-    .sliders .col.s5 p {
-      font-size: 20px;
-    }
-
-    button.waves-effect {
-      top: 80%;
-      min-height: 40px;
-      min-width: 20%;
-      font-size: 2rem;
-    }
-
-    .materialboxed {
-      width: 200px;
-      margin: auto;
-    }
-
-    #beer-info .row .col.s6 {
-      margin-top: 30px;
-      width: 100%;
-      text-align: center;
-    }
-
-    h1 {
-      margin: 10px 0 10px 0;
-    }
-
-    .beer-info p {
-      margin: 20px 0 40px 0;
-    }
-
-    .values {
-      margin-left: 60px;
-    }
-
-    .detail-info {
-      display: flex;
-    }
-
-    .detail-info .col.s5 {
-      flex-direction: column;
-    }
-
-    #glassware {
-      margin: auto;
-    }
-    
+  #beer-info .row .col.s5, .dropdown-trigger {
+    width: 100%;
   }
-
-  @media (max-width: 400px) {
-    .dropdown-trigger {
-      width: 50%;
-    }
+  .row .input-field.col.s7 {
+    width: 80%;
   }
+  .dropdown-trigger {
+    margin-top: 0;
+  }
+  .search-engine {
+    margin: auto;
+    height: 450px;
+    position: relative;
+  }
+  .dropdown-trigger {
+    position: absolute;
+    width: 20%;
+    top: 35%;
+  }
+  .dropdown-trigger, button.waves-effect {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .sliders {
+    margin-top: 60px;
+  }
+  .sliders .col.s5, button.waves-effect {
+    position: absolute;
+  }
+  .sliders .col.s5 {
+    width: 70%;
+  }
+  .sliders .col.s5:nth-child(2) {
+    left: 15%;
+  }
+  .sliders .col.s5:nth-child(3) {
+    top: 60%;
+    left: 15%;
+  }
+  .sliders .col.s5 p {
+    font-size: 20px;
+  }
+  button.waves-effect {
+    top: 80%;
+    height: 40px;
+    width: 20%;
+    font-size: 2rem;
+  }
+  /* .materialboxed {
+    width: 200px;
+    margin: auto;
+  }
+  #beer-info .row .col.s6 {
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+  }
+  h1 {
+    margin: 10px 0 10px 0;
+  }
+  .beer-info p {
+    margin: 20px 0 40px 0;
+  }
+  .values {
+    margin-left: 60px;
+  }
+  .detail-info {
+    display: flex;
+  }
+  .detail-info .col.s5 {
+    flex-direction: column;
+  }
+  #glassware {
+    margin: auto;
+  } */
+}
+
+@media (max-width: 400px) {
+  .dropdown-trigger {
+    width: 50%;
+  }
+}

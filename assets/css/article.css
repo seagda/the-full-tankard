@@ -1,0 +1,37 @@
+.article {
+    background: url(https://images.unsplash.com/photo-1576216880820-1cae8734faff?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80) no-repeat center bottom fixed;
+    background-size: cover;
+    width: 100%;
+    overflow: hidden;
+    opacity: 0.5;
+}
+
+.input-field .prefix.active {
+    color: #eee5d9;
+}
+
+.noUi-tooltip span {
+    position: relative;
+    font-size: 15px;
+    top: 0;
+}
+
+.noUi-origin, .noUi-target.noUi-ltr.noUi-horizontal .noUi-tooltip, .noUi-connect, .noUi-active {
+    background-color: #546e7a;
+}
+
+.sliders {
+    margin-bottom: 0;
+    margin-top: 40px;
+}
+
+.sliders>.col.s5>p {
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.3rem;
+    margin-top: 10px;
+  }
+
+.article-btn:hover {
+    color: #ffab40;
+}
