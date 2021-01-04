@@ -26,16 +26,18 @@
             <section class="nav-wrapper">
                 <a id="logo-container" href="../../index.html" class="brand-logo">The Full Tankard</a>
                 <ul class="right hide-on-med-and-down">
+                    <li><a href="../../index.html">Home</a></li>
                     <li><a href="./beer.html">Beer</a></li>
                     <li><a href="./brewery.html">Brewers</a></li>
-                    <li><a href="./article.html">News</a></li>
+                    <li><a href="./article.html">Articles</a></li>
                     <li><a href="./contact.html">Contact</a></li>
                 </ul>
 
                 <ul id="nav-mobile" class="sidenav">
+                    <li><a href="../../index.html">Home</a></li>
                     <li><a href="./beer.html">Beer</a></li>
                     <li><a href="./brewery.html">Brewers</a></li>
-                    <li><a href="./article.html">News</a></li>
+                    <li><a href="./article.html">Articles</a></li>
                     <li><a href="./contact.html">Contact</a></li>
                 </ul>
                 <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -45,34 +47,30 @@
         <section class="section no-pad-bot search-engine">
             <section class="container">
                 <section class="row">
-                    <form class="col s12">
+                    <form class="col s12" id="article-search">
                         <section class="row">
                             <section class="col s2"></section>
                             <section class="input-field col s7">
                                 <i class="material-icons prefix">search</i>
-                                <!-- user input -->
-                                <textarea id="news-keyword" class="materialize-textarea"></textarea>
-                                <label for="news-keyword">Search by keyword</label>
+                                <textarea id="article-keyword" class="materialize-textarea"></textarea>
+                                <label for="article-keyword">Search by keyword</label>
                             </section>
                         </section>
 
                         <section class="row sliders center">
                             <section class="col s1"></section>
                             <section class="col s5">
-                                <!-- attached sample syntax for getting value from noUiSlider at the bottom of script -->
-                                <!-- number of articles -->
                                 <section id="number-article"></section>
                                 <p>Number of Articles</p>
                             </section>
                             <section class="col s5">
-                                <!-- year range -->
                                 <section id="year-range"></section>
                                 <p>Year Range</p>
                             </section>
                         </section>
                         <section class="row center">
-                            <button class="waves-effect blue-grey darken-4 btn-large article-btn btn">Find
-                                Article</button>
+                            <button class="waves-effect blue-grey darken-4 btn-large article-btn btn" id="article-button">Find
+                                Articles</button>
                         </section>
                     </form>
                 </section>
@@ -81,59 +79,8 @@
         <section class="parallax article"></section>
     </section>
 
-    <section class="container" id="article-row">
-        <!-- TODO: Append results cards here -->
-
-        <!-- TODO: replace these with generated cars from JQUERY code -->
-        <section class="card">
-            <section class="card-content white-text">
-                <!-- news title -->
-                <span class="card-title">Card Title</span>
-                <!-- news breif description -->
-                <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-            </section>
-            <section class="card-action">
-                <!-- news link -->
-                <button class="link" href="#">This is a link</button>
-            </section>
-        </section>
-        <!-- TODO: replace these with generated cars from JQUERY code -->
-
-        <section class="card">
-            <section class="card-content white-text">
-                <span class="card-title">Card Title</span>
-                <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-            </section>
-            <section class="card-action">
-                <button class="link" href="#">This is a link</button>
-            </section>
-        </section>
-
-        <section class="card">
-            <section class="card-content white-text">
-                <span class="card-title">Card Title</span>
-                <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-            </section>
-            <section class="card-action">
-                <button class="link" href="#">This is a link</button>
-            </section>
-        </section>
-
-
-        <section class="card">
-            <section class="card-content white-text">
-                <span class="card-title">Card Title</span>
-                <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-            </section>
-            <section class="card-action">
-                <button class="link" href="#">This is a link</button>
-            </section>
-        </section>
-    </section>
+    <section class="container">
+        <section class="row" id="article-row"></section>
 
     <footer class="page-footer grey darken-4">
         <p class="footer-copyright">
@@ -145,46 +92,7 @@
     <script src="https://materializecss.com/dist/js/materialize.js"></script>
     <script src="https://materializecss.com/extras/noUiSlider/nouislider.js"></script>
     <script src="../script/animate.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wnumb/1.2.0/wNumb.min.js"
-        integrity="sha512-igVQ7hyQVijOUlfg3OmcTZLwYJIBXU63xL9RC12xBHNpmGJAktDnzl9Iw0J4yrSaQtDxTTVlwhY730vphoVqJQ=="
-        crossorigin="anonymous"></script>
-    <script>
-        var numberArticle = document.getElementById("number-article");
-        noUiSlider.create(numberArticle, {
-            start: 40,
-            connect: 'lower',
-            step: 1,
-            range: {
-                'min': 0,
-                'max': 100
-            },
-            format: wNumb({
-                decimals: 0
-            })
-        });
-
-        // Create year Range
-        var yearRange = document.getElementById("year-range");
-        noUiSlider.create(yearRange, {
-            start: [20, 90],
-            connect: true,
-            step: 1,
-            orientation: 'horizontal',
-            range: {
-                'min': 5,
-                'max': 120
-            },
-            format: wNumb({
-                decimals: 0
-            })
-        });
-        // Create number of articles from slide selector element
-        var slider = document.getElementById("number-article");
-        slider.addEventListener("click", event => {
-            console.log(slider.noUiSlider.get())
-        })
-    </script>
-    <script src="../script/script.js"></script>
+    <script src="../script/article.js"></script>
 </body>
 
 </html>

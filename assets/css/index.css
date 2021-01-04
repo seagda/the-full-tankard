@@ -150,6 +150,12 @@ a.get-direction-btn:hover {
   margin-bottom: 0;
 }
 
+@media (max-width: 1199px) {
+  #article-list p a {
+    width: 600px; 
+  }
+}
+
 @media (max-width: 992px) {
   .beer-btn, .brewery-btn {
     padding-top: 5px;
