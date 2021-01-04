@@ -52,19 +52,20 @@
                             <section class="input-field col s7">
                                 <i class="material-icons prefix">search</i>
                                 <!-- user input -->
-                                <textarea id="icon_prefix3" class="materialize-textarea"></textarea>
-                                <label for="icon_presfix2">Search for beer</label>
+                                <textarea id="beer-keywords" class="materialize-textarea"></textarea>
+                                <label for="beer-keywords">Search for beer</label>
                             </section>
-                            <section class="col s3">
-                                <button class="dropdown-trigger btn" href='#' data-target='dropdown1'><i
-                                        class="material-icons right">arrow_drop_down</i>Choose a style!</button>
+                            <section class="col s3 input-field">
+                                <select id="style-dropdown">
+                                    <option value="" disabled selected></option>
+                                    <option value="1"></option>
+                                    <option value="2"></option>
+                                    <option value="3"></option>
+                                  </select>
+                                  <label>Choose Your Style</label>
+                            </section>
+                        </section>
 
-                                <ul id='dropdown1' class='dropdown-content'>
-                                    <!-- append list of beer style -->
-                                    <li><a href="#!">one</a></li>
-                                    <li><a href="#!">two</a></li>
-                                </ul>
-                            </section>
                         </section>
                         <section class="row sliders">
                             <section class="col s1"></section>
@@ -75,7 +76,7 @@
                             </section>
                             <section class="col s5">
                                 <section id="ibu"></section>
-                                <p>Biterness(IBU)</p>
+                                <p>Bitterness(IBU)</p>
                             </section>
                         </section>
                         <section class="row center">
@@ -111,6 +112,9 @@
 
                         <!-- beer ibu: .ibu -->
                         <p class="ibu">10</p>
+
+                        <!-- beer brewery: .beer-brewery -->
+                        <a class="beer-brewery">brewery</a>
 
                         <!-- beer description: .brief-descript -->
                         <p class="brief-descript activator">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
