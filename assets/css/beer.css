@@ -50,7 +50,7 @@ button.dropdown-trigger, .dropdown-trigger:focus {
   top: 0;
 }
 
-.noUi-origin, .noUi-target.noUi-ltr.noUi-horizontal .noUi-tooltip, .noUi-connect, .noUi-active {
+.noUi-origin, .noUi-target.noUi-ltr.noUi-horizontal .noUi-tooltip, .noUi-connect, .noUi-active, .noUi-horizontal .noUi-handle, .noUi-vertical .noUi-handle {
   background-color: #546e7a;
 }
 
@@ -70,10 +70,9 @@ button.dropdown-trigger, .dropdown-trigger:focus {
   color: #6d4c41;
 }
 
-.card {
+.row .col.s3 {
   width: 30%;
-  display: inline-block;
-  margin: 10px;
+  margin-left: 2%;
 }
 
 .link {
@@ -93,37 +92,6 @@ button.dropdown-trigger, .dropdown-trigger:focus {
   cursor: pointer;
 }
 
-/* .beer-info {
-  margin-bottom: 0;
-} */
-
-/* h1 {
-  margin: 10px 0 20px 0;
-}
-
-#tags {
-  margin-left: 10px;
-}
-
-.col.s3>h2, .col.s3>p {
-  margin: 0;
-  text-align: center;
-}
-
-h4 {
-  overflow: hidden;
-  white-space: nowrap;
-  font-size: 1.75rem;
-}
-
-#glassware {
-  width: 220px;
-}
-
-.hidden {
-  display: none !important;
-} */
-
 #beer-style {
   font-weight: bolder;
 }
@@ -132,102 +100,72 @@ h4 {
   font-weight: bolder;
 }
 
-@media (max-width: 1199px) {
-  /* .materialboxed {
-    width: 300px;
-  }
-  #beer-pair.row .col.s5 {
-    width: 100%;
-    display: block;
-  }
-  #glassware {
-    margin: 0;
-  } */
+.waves-effect {
+  -webkit-transition: none;
+  transition: none;
 }
 
 @media (max-width: 992px) {
-  #beer-info .row .col.s5, .row .input-field.col.s7, .dropdown-trigger, .sliders .col.s5 {
-    display: block;
-  }
-  #beer-info .row .col.s5, .dropdown-trigger {
-    width: 100%;
-  }
-  .row .input-field.col.s7 {
-    width: 80%;
-  }
-  .dropdown-trigger {
-    margin-top: 0;
-  }
   .search-engine {
     margin: auto;
     height: 450px;
     position: relative;
   }
+  .row .input-field.col.s7 {
+    width: 80%;
+  }
   .dropdown-trigger {
+    width: 100%;
+    margin-top: 0;
+    left: 50%;
+  }
+  .btn {
     position: absolute;
-    width: 20%;
-    top: 35%;
+    width: 25%;
   }
   .dropdown-trigger, button.waves-effect {
-    left: 50%;
     transform: translate(-50%, -50%);
   }
   .sliders {
     margin-top: 60px;
   }
-  .sliders .col.s5, button.waves-effect {
+  .sliders .col.s5 {
     position: absolute;
   }
-  .sliders .col.s5 {
-    width: 70%;
+  #abv, #ibu {
+    width: 100%;
   }
-  .sliders .col.s5:nth-child(2) {
-    left: 15%;
+  .sliders .col.s5:nth-child(2), .sliders .col.s5:nth-child(3) {
+    left: 29%;
   }
   .sliders .col.s5:nth-child(3) {
     top: 60%;
-    left: 15%;
   }
   .sliders .col.s5 p {
     font-size: 20px;
   }
-  button.waves-effect {
+  .waves-effect {
     top: 80%;
-    height: 40px;
-    width: 20%;
-    font-size: 2rem;
+    left: 49%;
   }
-  /* .materialboxed {
-    width: 200px;
-    margin: auto;
+  .row .col.s3 {
+    width: 40%;
+    margin-left: 7%;
   }
-  #beer-info .row .col.s6 {
-    margin-top: 30px;
-    width: 100%;
-    text-align: center;
+}
+
+@media (max-width: 671px) {
+  .row .col.s3 {
+    width: 80%;
+    margin-left: 10%;
   }
-  h1 {
-    margin: 10px 0 10px 0;
+  .beer-btn.btn {
+    left: 48%;
   }
-  .beer-info p {
-    margin: 20px 0 40px 0;
-  }
-  .values {
-    margin-left: 60px;
-  }
-  .detail-info {
-    display: flex;
-  }
-  .detail-info .col.s5 {
-    flex-direction: column;
-  }
-  #glassware {
-    margin: auto;
-  } */
 }
 
 @media (max-width: 400px) {
-  .dropdown-trigger {
+  .btn {
     width: 50%;
   }
 }

@@ -24,18 +24,16 @@
             <section class="nav-wrapper">
                 <a id="logo-container" href="../../index.html" class="brand-logo">The Full Tankard</a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="../../index.html">Home</a></li>
-                    <li><a href="./article.html">Article</a></li>
                     <li><a href="./beer.html">Beer</a></li>
-                    <li><a href="./brewery.html">Brewery</a></li>
+                    <li><a href="./brewery.html">Brewers</a></li>
+                    <li><a href="./article.html">News</a></li>
                     <li><a href="./contact.html">Contact</a></li>
                 </ul>
 
                 <ul id="nav-mobile" class="sidenav">
-                    <li><a href="../../index.html">Home</a></li>
-                    <li><a href="./article.html">Article</a></li>
                     <li><a href="./beer.html">Beer</a></li>
-                    <li><a href="./brewery.html">Brewery</a></li>
+                    <li><a href="./brewery.html">Brewers</a></li>
+                    <li><a href="./article.html">News</a></li>
                     <li><a href="./contact.html">Contact</a></li>
                 </ul>
                 <a href="./brewery.html" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -52,8 +50,8 @@
                             <section class="input-field col s8">
                                 <i class="material-icons prefix">search</i>
                                 <!-- user input -->
-                                <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                                <label for="icon_prefix2">Search for brewery</label>
+                                <textarea id="brewer-keyword" class="materialize-textarea"></textarea>
+                                <label for="brewer-keyword">Search by brewer</label>
                             </section>
                         </section>
                         <section class="row">
@@ -61,13 +59,13 @@
                             <section class="input-field col s8">
                                 <i class="material-icons prefix">place</i>
                                 <!-- user input -->
-                                <textarea id="icon_prefix_region" class="materialize-textarea"></textarea>
-                                <label for="icon_prefix2">Search by region</label>
+                                <textarea id="region-keyword" class="materialize-textarea"></textarea>
+                                <label for="region-keyword">Search by region</label>
                             </section>
                         </section>
                         <section class="row center">
                             <button class="waves-effect brown darken-3 btn-large brewery-btn btn" href="#">Find
-                                Brewery</button>
+                                Brewer</button>
                         </section>
                     </form>
                 </section>
@@ -102,11 +100,9 @@
     </section>
 
     <footer class="page-footer grey darken-4">
-        <section class="footer-copyright">
-            <section class="container">
-                Made by <a class="brown-text text-lighten-3" href="">Elias Calagiu, Rita Z., Shea Mullaney</a>
-            </section>
-        </section>
+        <p class="footer-copyright">
+            Made by Elias Calagiu, Rita Z., Shea Mullaney
+        </p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

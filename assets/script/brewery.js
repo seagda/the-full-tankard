@@ -5,8 +5,8 @@ $(document).ready(function () {
 
     var queryURLBrewery = "https://api.openbrewerydb.org/breweries?"
 
-    var breweryCity = $("#icon_prefix_region").val();
-    var brewery = $("#icon_prefix2").val();
+    var breweryCity = $("#region-keyword").val();
+    var brewery = $("#brewer-keyword").val();
 
     if (breweryCity !== "") {
       queryURLBrewery += "by_city=" + breweryCity + "&"

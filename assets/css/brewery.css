@@ -34,20 +34,33 @@ a.get-direction-btn:hover {
 }
 
 @media (max-width: 671px) {
-  .card .card-content {
-    padding: 0 10px;
+  .card-image {
+    width: 30%;
+  }
+  .card-image img {
+    height: 100%;
+  }
+  .company-name {
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 400px) {
-  .row {
-    margin-bottom: 0;
+  .card.horizontal {
+    width: 95%;
+    height: 230px;
+    margin: auto;
   }
-  h4 {
-    margin: 10px 0;
-    font-size: 2.1rem;
+  .company-name {
+    margin-top: 0;
+    font-size: 1.5rem;
+    white-space: nowrap;
   }
-  .card-image img {
-    height: 100%;
+  .card .card-content {
+    padding: 15px;
+    padding-bottom: 0;
+  }
+  .card .card-action {
+    padding-top: 5px;
   }
 }

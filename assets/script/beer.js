@@ -4,7 +4,7 @@ $(document).ready(function () {
         event.preventDefault();
         $("#card-container").empty();
 
-        var beerName = $("#icon_prefix3").val();
+        var beerName = $("#beer-keyword").val();
         var queryURLBeer = "https://data.opendatasoft.com/api/records/1.0/search/?dataset=open-beer-database%40public-us&q=" + beerName + "&facet=style_name&facet=cat_name&facet=name"
 
         $.ajax({
