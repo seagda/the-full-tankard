@@ -51,7 +51,7 @@ $(document).ready(function () {
             url: queryURLBeer,
             method: "GET"
         }).then(function (response) {
-            
+  
             for (var i = 0; i < response.records.length; i++) {
                 var beerCardMedium = $("<section>").addClass("card medium");
                 $("#card-container").append(beerCardMedium);
@@ -90,11 +90,11 @@ $(document).ready(function () {
                     beerCardABV.text(`No ABV on file for ${response.records[i].fields.name}`)
                 } else {
                     beerCardABV.text("ABV: " + response.records[i].fields.abv.toFixed(2));
-                    
+  
                 };
                 beerCardContent.append(beerCardABV);
   
-                
+  
                 // append beerIBU to card 
                 var beerCardIBU = $("<p>").addClass("ibu");
                 if (response.records[i].fields.ibu === undefined) {
@@ -103,12 +103,19 @@ $(document).ready(function () {
                     beerCardIBU.text("IBU: " + response.records[i].fields.ibu.toFixed(2));
                 };
                 beerCardContent.append(beerCardIBU);
-                
+  
   
                 // append briefBeerDescription to card
                 var briefBeerDescription = $("<p>").addClass("brief-descript activator");
-                briefBeerDescription.text(response.records[i].fields.descript);
-                beerCardContent.append(briefBeerDescription);
+                if (response.records[i].fields.descript.length > 100) {
+                    briefBeerDescription.text(response.records[i].fields.descript.substr(0, 100) + "...");
+                }
+                else {
+                    briefBeerDescription.text(response.records[i].fields.descript);
+                }
+  
+  
+                beerCardContent.append(briefBeerDescription)
   
                 //  append brewery info and link to brewery.html
                 var beerBrewery = $("<a target='_blank'>").addClass("beer-brewery");
@@ -121,7 +128,7 @@ $(document).ready(function () {
                 beerCardContent.append(beerBrewery);
   
   
-                
+  
   
                 var beerCardReveal = $("<section>").addClass("card-reveal");
                 beerCardMedium.append(beerCardReveal);
@@ -132,8 +139,8 @@ $(document).ready(function () {
                 var beerCloseSign = $("<i class='material-icons right'>close</i>")
                 beerCardTitle.append(beerCloseSign);
   
-                
-               
+  
+  
   
                 // append briefBeerDescription to hidden card
                 var beerDescription = $("<p>").addClass("full-descript");
