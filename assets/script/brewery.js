@@ -10,18 +10,18 @@ $(document).ready(function () {
   $(".brewery-btn").click(function (event) {
     event.preventDefault();
 
-    var queryURLBrewery = "https://api.openbrewerydb.org/breweries?"
+    var queryURLBrewery = "https://api.openbrewerydb.org/breweries?";
 
     var breweryCity = $("#search-by-city").val();
 
     var breweryName = $("#search-by-name").val();
 
     if (breweryCity !== "") {
-      queryURLBrewery += "by_city=" + breweryCity + "&"
+      queryURLBrewery += "by_city=" + breweryCity + "&";
     };
 
-    if (breweryState !== "") {
-      queryURLBrewery += "by_state=" + breweryState; + "&"
+    if (breweryState !== undefined) {
+      queryURLBrewery += "by_state=" + breweryState; + "&";
     };
 
     if (breweryName !== "") {
@@ -34,7 +34,8 @@ $(document).ready(function () {
     } else {
       $(".brewery-btn").removeClass("modal-trigger");
       $(".brewery-btn").removeAttr("href");
-      $("#brewery-card-container").empty()
+      $("#brewery-card-container").empty();
+      console.log(breweryName);
       fetchAPI(queryURLBrewery);
     }
   });

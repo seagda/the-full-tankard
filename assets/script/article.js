@@ -31,13 +31,7 @@ noUiSlider.create(yearRange, {
     })
 });
 
-var pageSizeSlide = document.getElementById("number-article");
-var dateRangeSlide = document.getElementById("year-range");
-
-var pageSize = pageSizeSlide.noUiSlider.get();
-var fromPublishedDate = dateRangeSlide.noUiSlider.get()[0] + "-01-01";
-var toPublishedDate = dateRangeSlide.noUiSlider.get()[1] + "-12-31";
-fetchAPI("beer+pacific+northwest", pageSize, fromPublishedDate, toPublishedDate);
+fetchAPI("beer+pacific+northwest", 5, "2019-01-01", "2020-12-31");
 
 
 // Create variable for button element
@@ -50,6 +44,12 @@ searchArticle.addEventListener("click", event => {
     $("#article-row").empty();
 
     // Get pageSize, toPublishedDate, and fromPublishedDate from slide selector element
+    var pageSizeSlide = document.getElementById("number-article");
+    var dateRangeSlide = document.getElementById("year-range");
+
+    var pageSize = pageSizeSlide.noUiSlider.get();
+    var fromPublishedDate = dateRangeSlide.noUiSlider.get()[0] + "-01-01";
+    var toPublishedDate = dateRangeSlide.noUiSlider.get()[1] + "-12-31";
     var articleQuery = $("#article-keyword").val();
 
     if (articleQuery !== "") {
