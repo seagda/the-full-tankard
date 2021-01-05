@@ -4,7 +4,9 @@ $(document).ready(function () {
     var beerStyle = "";
     var beerName;
     var queryURLBeerDropdown = "https://data.opendatasoft.com/api/records/1.0/search/?dataset=open-beer-database%40public-us&q=&facet=style_name&facet=cat_name&facet=name"
-  
+
+
+  var storedBeerStyle = localStorage.getItem("stored beer style")
     $("#style-dropdown").on("change", function () {
         queryURLBeer = "https://data.opendatasoft.com/api/records/1.0/search/?dataset=open-beer-database%40public-us&"
         beerStyle = $(this).val();
@@ -13,6 +15,7 @@ $(document).ready(function () {
         if (beerStyle !== "") {
             queryURLBeer += "q=" + beerStyle + "&";
         }
+        localStorage.setItem("stored beer style", beerStyle)
     });
   
     $.ajax({
@@ -39,7 +42,7 @@ $(document).ready(function () {
     //     beerIBU.noUiSlider.get();
     //     console.log(beerIBU.noUiSlider.get())
     // });
-  
+  var storedBeer = localStorage.getItem("stored beer")
     $(".beer-btn").click(function (event) {
         event.preventDefault();
         beerName = $('#beer-keywords').val();
@@ -47,6 +50,7 @@ $(document).ready(function () {
         if (beerName !== "") {
             queryURLBeer += "q=" + beerName;
         };
+        localStorage.setItem("stored beer", beerName)
         $.ajax({
             url: queryURLBeer,
             method: "GET"
@@ -150,11 +154,4 @@ $(document).ready(function () {
         });
   
     });
-  
-    // 
-    //  user dropdownSelection goes here
-  
-  
-    //     // TODO: save user input in local storage
-  
   });

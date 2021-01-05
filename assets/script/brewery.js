@@ -7,13 +7,16 @@ var breweryCity = $("#icon_prefix_region").val();
 console.log(breweryCity);
 var brewery = $("#icon_prefix2").val();
 console.log(brewery);
+var storedBrewery = localStorage.getItem("stored brewery")
+var storedBreweryCity = localStorage.getItem("stored brewery city")
 if (breweryCity !== "") {
 queryURLBrewery += "by_city=" + breweryCity + "&"};
-
+localStorage.setItem("stored brewery city", breweryCity);
 if (brewery !== "") {
 queryURLBrewery += "by_name=" + brewery;
 
 };
+localStorage.setItem("stored brewery", brewery);
 console.log(queryURLBrewery);
     $.ajax({
       url: queryURLBrewery,
