@@ -9,6 +9,7 @@ $(document).ready(function () {
 
   $(".brewery-btn").click(function (event) {
     event.preventDefault();
+    $(".preloader-wrapper").removeClass("hidden");
 
     var queryURLBrewery = "https://api.openbrewerydb.org/breweries?";
 
@@ -35,7 +36,6 @@ $(document).ready(function () {
       $(".brewery-btn").removeClass("modal-trigger");
       $(".brewery-btn").removeAttr("href");
       $("#brewery-card-container").empty();
-      console.log(breweryName);
       fetchAPI(queryURLBrewery);
     }
   });
