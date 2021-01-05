@@ -35,6 +35,11 @@
   color: #212121;
 }
 
+#choose-style .select-wrapper ul.dropdown-content {
+  top: 10px !important;
+  max-height: 200px !important;
+}
+
 .beer-btn:hover {
   color: #6d4c41;
 }
