@@ -32,6 +32,11 @@
     margin-top: 10px;
 }
 
+#year-range .noUi-base .noUi-origin .noUi-handle .noUi-tooltip span {
+    font-size: 10px;
+    top: -3px;
+}
+
 .article-btn:hover {
     color: #ffab40;
 }
