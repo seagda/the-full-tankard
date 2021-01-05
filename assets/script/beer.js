@@ -1,5 +1,6 @@
 $(document).ready(function () {
     var beerStyle;
+    var queryURLBeer = `https://data.opendatasoft.com/api/records/1.0/search/?dataset=open-beer-database%40public-us&`;
     var storedBeerStyle = localStorage.getItem("stored beer style")
     var listBeers = JSON.parse(localStorage.getItem("savedBeer"));
     var listIds = JSON.parse(localStorage.getItem("savedId"));
@@ -30,7 +31,7 @@ $(document).ready(function () {
         $(".preloader-wrapper").removeClass("hidden");
         localStorage.setItem("stored beer style", beerStyle);
 
-        var queryURLBeer = `https://data.opendatasoft.com/api/records/1.0/search/?dataset=open-beer-database%40public-us&`;
+        queryURLBeer = `https://data.opendatasoft.com/api/records/1.0/search/?dataset=open-beer-database%40public-us&`;
 
         if (beerStyle !== undefined) {
             queryURLBeer += "q=" + beerStyle + "&";
@@ -55,6 +56,7 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '.fa-heart', function () {
+        console.log("click");
         saveBeer($(this));
     });
 
