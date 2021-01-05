@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Abel&family=Handlee&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet" href="https://materializecss.com/dist/css/materialize.min.css" />
+
+    <link rel="stylesheet" href="https://materializecss.com/extras/noUiSlider/nouislider.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/beer.css">
+    <title>The Full Tankard | Beer</title>
+</head>
+
+<body>
+    <section id="index-banner" class="parallax-container">
+        <nav role="navigation">
+            <section class="nav-wrapper">
+                <a id="logo-container" href="../../index.html" class="brand-logo">The Full Tankard</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="./beer.html">Beer</a></li>
+                    <li><a href="./brewery.html">Brewers</a></li>
+                    <li><a href="./article.html">Articles</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+
+                <ul id="nav-mobile" class="sidenav">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="./beer.html">Beer</a></li>
+                    <li><a href="./brewery.html">Brewers</a></li>
+                    <li><a href="./article.html">Articles</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+                <a href="./beer.html" data-target="nav-mobile" class="sidenav-trigger"><i
+                        class="material-icons menu">menu</i></a>
+            </section>
+        </nav>
+
+        <section class="section no-pad-bot search-engine">
+            <section class="container">
+                <section class="row">
+                    <form class="col s12">
+                        <section class="row">
+                            <section class="col s1"></section>
+                            <section class="input-field col s7">
+                                <i class="material-icons prefix">search</i>
+                                <textarea id="beer-keywords" class="materialize-textarea"></textarea>
+                                <label for="beer-keywords">Search for beer</label>
+                            </section>
+                            <section class="input-field col s3">
+                                <select id="style-dropdown">
+                                    <option value="" disabled selected></option>
+                                </select>
+                                <label for="style-dropdown">Choose beer style</label>
+                            </section>
+                        </section>
+
+                        <section class="row center">
+                            <button class="waves-effect orange accent-3 btn-large beer-btn btn" href="#">Find My
+                                Beer</button>
+                        </section>
+                    </form>
+                </section>
+            </section>
+            <section class="parallax beer-wall"></section>
+        </section>
+    </section>
+
+    <section class="container">
+        <section class="nav-content center">
+            <ul class="tabs tabs-transparent">
+                <li class="tab"><a class="active" href="#card-container">Find Beer</a></li>
+                <li class="tab"><a href="#my-beer">My Beer</a></li>
+            </ul>
+        </section>
+        <section class="preloader-wrapper active">
+            <section class="spinner-layer spinner-blue-only">
+                <section class="circle-clipper left">
+                    <section class="circle"></section>
+                </section>
+                <section class="gap-patch">
+                    <section class="circle"></section>
+                </section>
+                <section class="circle-clipper right">
+                    <section class="circle"></section>
+                </section>
+            </section>
+        </section>
+        <section class="row" id="card-container">
+        </section>
+        <section class="row" id="my-beer">
+        </section>
+        <section id="modal" class="modal">
+            <section class="modal-content">
+                <h4>Please fill at least one input field:)</h4>
+            </section>
+            <section class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-grey btn-flat link">OK</a>
+            </section>
+        </section>
+    </section>
+
+    <footer class="page-footer grey darken-4">
+        <p class="footer-copyright">Made by Elias Calagiu, Rita Z., Shea Mullaney</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://materializecss.com/dist/js/materialize.js"></script>
+    <script src="https://materializecss.com/extras/noUiSlider/nouislider.js"></script>
+    <script src="../script/animate.js"></script>
+    <script src="../script/beer.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+.background-img1 {
+  background: url(https://images.unsplash.com/photo-1436076863939-06870fe779c2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2850&q=80) no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+}
+
+.background-img2 {
+  background: url(https://images.unsplash.com/photo-1538488881038-e252a119ace7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80) no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0.7;
+}
+
+.background-img3 {
+  background: url(https://images.unsplash.com/photo-1513189737554-b1bbd839b9a3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1950&q=80) no-repeat center center fixed;
+  background-size: cover;
+  width: 100%;
+  overflow: hidden;
+}
+
+#btns {
+  margin-top: 200px;
+}
+
+.beer-btn, .brewery-btn {
+  padding-top: 8px;
+}
+
+.beer-btn:hover {
+  color: #6d4c41;
+}
+
+.brewery-btn:hover {
+  color: #ff9100;
+}
+
+.parallax-container {
+  min-height: 500px;
+  height: auto;
+  color: rgba(255, 255, 255, .9);
+}
+
+.parallax-container .section {
+  width: 100%;
+}
+
+.rand-card .card-content:first-child {
+  background-color: #eee5d9;
+  color: #263238;
+}
+
+.rand-card {
+  width: 70%;
+  margin: auto;
+}
+
+.tabs .indicator {
+  background-color: #eee5d9;
+}
+
+.tabs .tab a {
+  color: #263238;
+}
+
+.tabs .tab a:hover, .tabs .tab a.active, .tabs .tab a:focus, .tabs .tab a:focus.active {
+  background-color: #263238;
+  opacity: 0.9;
+  color: #eee5d9;
+}
+
+#rand-style-name {
+  margin-top: 0;
+}
+
+a.get-direction-btn {
+  margin: 10px 0;
+  padding-top: 3px;
+  height: 40px;
+  width: 150px;
+  font-size: 1.5rem;
+  background-color: #546e7a;
+}
+
+a.get-direction-btn:hover {
+  background-color: #eee5d9;
+  color: #546e7a;
+}
+
+#articles-box {
+  margin: 10px 0;
+  border: 2px solid white;
+  padding: 20px;
+  font-size: 1.5rem;
+  background-color: #263238;
+  opacity: 0.8;
+  overflow: visible;
+}
+
+#article-list span a {
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  width: 800px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#news-btn-row {
+  margin-bottom: 0;
+}
+
+#article-list span {
+  display: block;
+}
+
+@media (max-width: 1199px) {
+  #article-list span a {
+    width: 600px;
+  }
+}
+
+@media (max-width: 992px) {
+  .beer-btn, .brewery-btn {
+    padding-top: 5px;
+  }
+}
+
+@media (max-width: 747px) {
+  #article-list span a {
+    width: 400px;
+  }
+}
+
+@media (max-width: 671px) {
+  .beer-btn, .brewery-btn {
+    display: block;
+    min-width: 130px;
+    min-height: 50px;
+    margin: 20px auto !important;
+  }
+  #btns {
+    margin-top: 150px;
+  }
+  #article-list span a {
+    width: 300px;
+  }
+}
+
+@media (max-width: 400px) {
+  .preloader-wrapper {
+    left: 42%;
+  }
+}

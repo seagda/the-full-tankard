@@ -1,0 +1,171 @@
+.beer-wall {
+  background: url(https://images.unsplash.com/photo-1505075106905-fb052892c116?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80) no-repeat center center fixed;
+  background-size: cover;
+  width: 100%;
+  overflow: hidden;
+  opacity: 0.5;
+}
+
+.search-engine {
+  margin-top: 30px;
+}
+
+.input-field .prefix.active, input {
+  color: #eee5d9;
+}
+
+.caret {
+  fill: #eee5d9 !important;
+}
+
+.select-wrapper input.select-dropdown:focus {
+  border-bottom: 1px solid #eee5d9;
+}
+
+.dropdown-content {
+  background-color: #212121;
+}
+
+.dropdown-content li>span {
+  color: #eee5d9;
+}
+
+.dropdown-content li>span:hover {
+  background-color: #eee5d9;
+  color: #212121;
+}
+
+.beer-btn:hover {
+  color: #6d4c41;
+}
+
+.row .col.s3 {
+  width: 30%;
+  margin-left: 2%;
+}
+
+.nav-content {
+  margin-bottom: 10px;
+}
+
+.tabs .tab a:focus, .tabs .tab a:focus.active {
+  background-color: #455a64;
+  opacity: 0.7;
+}
+
+.fa-heart {
+  cursor: pointer;
+}
+
+.link {
+  padding-left: 0;
+  color: #0288d1 !important;
+}
+
+.link:hover {
+  color: #81d4fa !important;
+  transition: color .3s ease !important;
+}
+
+.card.medium {
+  padding-bottom: 50px;
+}
+
+.card-title {
+  margin-top: 20px;
+}
+
+.sub {
+  margin-top: 15px !important;
+}
+
+.chip {
+  background-color: #546e7a;
+  color: #eee5d9;
+}
+
+.detail-info {
+  height: 250px;
+  overflow-y: scroll;
+}
+
+.card .card-reveal {
+  background-color: rgba(0, 0, 0, .95);
+}
+
+.card .card-reveal p {
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.activator {
+  cursor: pointer;
+}
+
+.waves-effect {
+  -webkit-transition: none;
+  transition: none;
+}
+
+.modal, .modal-footer {
+  background-color: #212121 !important;
+  color: #eee5d9 !important;
+}
+
+.modal-footer a {
+  font-size: 20px;
+}
+
+.preloader-wrapper {
+  margin: 50px 0px;
+}
+
+@media (max-width: 992px) {
+  .search-engine {
+    margin: auto;
+    height: 450px;
+    position: relative;
+  }
+  .row .input-field.col.s7 {
+    width: 80%;
+  }
+  .input-field.col.s3 {
+    width: 40%;
+    left: 29%;
+  }
+  .card.medium.col.s3 {
+    width: 40%;
+    left: 6%;
+  }
+  .btn {
+    position: absolute;
+    width: 25%;
+  }
+   button.waves-effect {
+    transform: translate(-50%, -50%);
+  }
+  .waves-effect {
+    top: 65%;
+    left: 49%;
+  }
+}
+
+@media (max-width: 671px) {
+  .input-field.col.s3 {
+    width: 50%;
+    left: 23%;
+  }
+  .card.medium.col.s3 {
+    width: 70%;
+    left: 12%;
+  }
+  .beer-btn.btn {
+    left: 48%;
+  }
+}
+
+@media (max-width: 400px) {
+  .btn {
+    width: 50%;
+  }
+}
