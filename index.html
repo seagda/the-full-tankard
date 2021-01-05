@@ -5,17 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Abel&family=Handlee&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Abel&family=Handlee&display=swap"
         rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link type="text/css" rel="stylesheet" href="https://materializecss.com/dist/css/materialize.min.css" />
 
-    <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>The Full Tankard</title>
+    <link rel="stylesheet" href="assets/css/index.css">
+    <title>The Full Tankard | Home</title>
 </head>
 
 <body>
@@ -24,6 +23,7 @@
             <section class="nav-wrapper">
                 <a id="logo-container" href="index.html" class="brand-logo">The Full Tankard</a>
                 <ul class="right hide-on-med-and-down">
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="assets/html/beer.html">Beer</a></li>
                     <li><a href="assets/html/brewery.html">Brewers</a></li>
                     <li><a href="assets/html/article.html">Articles</a></li>
@@ -31,6 +31,7 @@
                 </ul>
 
                 <ul id="nav-mobile" class="sidenav">
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="assets/html/beer.html">Beer</a></li>
                     <li><a href="assets/html/brewery.html">Brewers</a></li>
                     <li><a href="assets/html/article.html">Articles</a></li>
@@ -44,7 +45,8 @@
             <section class="container">
                 <br><br>
                 <section class="row center" id="btns">
-                    <a class="waves-effect orange accent-3 btn-large beer-btn btn" href="assets/html/beer.html">Find Beer</a>
+                    <a class="waves-effect orange accent-3 btn-large beer-btn btn" href="assets/html/beer.html">Find
+                        Beer</a>
                     <a class="waves-effect brown darken-3 btn-large brewery-btn btn"
                         href="assets/html/brewery.html">Find Brewer</a>
                 </section>
@@ -55,41 +57,36 @@
 
 
     <section class="container">
-        <section class="section">
-            <section class="row center">
-                <section class="col s12">
-                    <h3>Beer of the Day</h3>
-                    <h4 id="rand-beer"></h4>
-                    <section class="row">
-                        <section class="col s3"></section>
-                        <section class="col s6">
-                            <section class="card">
-                                <section class="card-content">
-                                    <p id="description"></p>
-                                </section>
-                                <section class="card-tabs">
-                                    <ul class="tabs tabs-fixed-width">
-                                        <li class="tab" id="style-tab"><a href="#style">Style</a></li>
-                                        <li class="tab" id="brewery-tab"><a class="active" href="#brewery">Brewery</a>
-                                        </li>
-                                        <li class="tab" id="website-tab"><a href="#website">Website</a></li>
-                                    </ul>
-                                </section>
-                                <section class="card-content">
-                                    <section id="style">
-                                        <h5 id="style-name"></h5>
-                                    </section>
-                                    <section id="brewery">
-                                        <h5 id="brewery-name"></h5>
-                                        <section id="rand-address"></section>
-                                        <a class="waves-effect btn get-direction-btn" id="get-direction"
-                                            target="_blank">Get
-                                            Directions</a>
-                                    </section>
-                                    <section id="website">
-                                        <h5 id="url"></h5>
-                                    </section>
-                                </section>
+        <section class="row center">
+            <section class="col s12">
+                <h3>Beer of the Day</h3>
+                <h4 id="rand-beer"></h4>
+                <section class="row">
+                    <section class="card rand-card">
+                        <section class="card-content">
+                            <p id="rand-description"></p>
+                        </section>
+                        <section>
+                            <ul class="tabs tabs-fixed-width">
+                                <li class="tab"><a href="#rand-style">Style</a></li>
+                                <li class="tab"><a class="active" href="#rand-brewer">Brewer</a>
+                                </li>
+                                <li class="tab"><a href="#rand-website">Website</a></li>
+                            </ul>
+                        </section>
+
+                        <section class="card-content">
+                            <section id="rand-style">
+                                <h5 id="rand-style-name"></h5>
+                            </section>
+                            <section id="rand-brewer">
+                                <h5 id="rand-brewer-name"></h5>
+                                <section id="rand-address"></section>
+                                <a class="waves-effect btn get-direction-btn" id="get-direction" target="_blank">Get
+                                    Directions</a>
+                            </section>
+                            <section id="rand-website">
+                                <h5 id="rand-url"></h5>
                             </section>
                         </section>
                     </section>
@@ -100,43 +97,45 @@
 
     <section class="parallax-container valign-wrapper">
         <section class="section no-pad-bot">
-            <section class="container" id="article-container">
-
-<!-- news card goes here -->
-                <section class="card horizontal" id="articles-box">
-                    <section class="card-stacked">
-                        <section id="article-list">
-                            <h3>What's New in Craft Beer</h3>
-
-                        </section>
-                        <section class="row center">
-                            <a class="waves-effect brown darken-3 btn-large brewery-btn btn" href="assets/html/article.html">More News</a>
+            <section class="container">
+                <section class="row center">
+                    <h3>What's New in Craft Beer</h3>
+                </section>
+                <section class="row" id="article-container">
+                    <section class="card-panel" id="articles-box">
+                        <section id="article-list"></section>
+                        <section class="preloader-wrapper active">
+                            <section class="spinner-layer spinner-blue-only">
+                                <section class="circle-clipper left">
+                                    <section class="circle"></section>
+                                </section>
+                                <section class="gap-patch">
+                                    <section class="circle"></section>
+                                </section>
+                                <section class="circle-clipper right">
+                                    <section class="circle"></section>
+                                </section>
+                            </section>
                         </section>
                     </section>
-
+                    <section class="row center">
+                        <a class="waves-effect blue-grey darken-4 btn-large brewery-btn btn"
+                            href="assets/html/article.html">More News</a>
+                    </section>
                 </section>
-<!-- news card ends -->
             </section>
+            <section class="parallax background-img2"></section>
         </section>
-        <section class="parallax background-img2"></section>
     </section>
 
     <footer class="page-footer grey darken-4">
-        <section class="footer-copyright">
-            <section class="container">
-                Made by <span class="brown-text text-lighten-3" href="">Elias Calagiu, Rita Z., Shea Mullaney</span>
-            </section>
-        </section>
+        <p class="footer-copyright">Made by Elias Calagiu, Rita Z., Shea Mullaney</p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://materializecss.com/dist/js/materialize.js"></script>
     <script src="./assets/script/animate.js"></script>
     <script src="assets/script/script.js"></script>
-    <script>
-
-
-    </script>
 </body>
 
 </html>

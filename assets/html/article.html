@@ -15,9 +15,9 @@
 
     <link rel="stylesheet" href="https://materializecss.com/extras/noUiSlider/nouislider.css">
 
-    <link rel="stylesheet" href="../css/article.css">
     <link rel="stylesheet" href="../css/style.css">
-    <title>The Full Tankard</title>
+    <link rel="stylesheet" href="../css/article.css">
+    <title>The Full Tankard | News</title>
 </head>
 
 <body>
@@ -47,17 +47,17 @@
         <section class="section no-pad-bot search-engine">
             <section class="container">
                 <section class="row">
-<!-- Search form starts here -->
                     <form class="col s12" id="article-search">
                         <section class="row">
                             <section class="col s2"></section>
-                            <section class="input-field col s8">
+                            <section class="input-field col s7">
                                 <i class="material-icons prefix">search</i>
                                 <textarea id="article-keyword" class="materialize-textarea"></textarea>
                                 <label for="article-keyword">Search by keyword</label>
                             </section>
                         </section>
-                        <section class="row sliders">
+
+                        <section class="row sliders center">
                             <section class="col s1"></section>
                             <section class="col s5">
                                 <section id="number-article"></section>
@@ -69,7 +69,8 @@
                             </section>
                         </section>
                         <section class="row center">
-                            <button class="waves-effect blue-grey darken-4 btn-large article-btn btn" id="article-button">Find
+                            <button class="waves-effect blue-grey darken-4 btn-large article-btn btn"
+                                id="article-button">Find
                                 Articles</button>
                         </section>
                     </form>
@@ -81,19 +82,34 @@
 
     <section class="container">
         <section class="row" id="article-row">
-<!-- Append results cards below here -->
- 
-        
-       
         </section>
+        <section class="preloader-wrapper active hidden">
+            <section class="spinner-layer spinner-blue-only">
+                <section class="circle-clipper left">
+                    <section class="circle"></section>
+                </section>
+                <section class="gap-patch">
+                    <section class="circle"></section>
+                </section>
+                <section class="circle-clipper right">
+                    <section class="circle"></section>
+                </section>
+            </section>
+        </section>
+        <section id="modal" class="modal">
+            <section class="modal-content">
+              <h4>Please fill some keyword in the search engine:)</h4>
+            </section>
+            <section class="modal-footer">
+              <a href="#!" class="modal-close waves-effect waves-grey btn-flat link">OK</a>
+            </section>
+          </section>
     </section>
 
     <footer class="page-footer grey darken-4">
-        <section class="footer-copyright">
-            <section class="container">
-                Made by <span class="brown-text text-lighten-3" href="">Elias Calagiu, Rita Z., Shea Mullaney</span>
-            </section>
-        </section>
+        <p class="footer-copyright">
+            Made by Elias Calagiu, Rita Z., Shea Mullaney
+        </p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

@@ -5,6 +5,8 @@ body {
   color: #eee5d9;
   font-family: 'Abel', sans-serif;
   /* font-family: 'Handlee', cursive; */
+  position: relative;
+  min-height: 100vh;
 }
 
 .btn, .input-field, .sliders>.col.s5>p {
@@ -25,6 +27,7 @@ body {
   border: none;
   background-color: transparent;
   color: #ffab40;
+  text-decoration: underline;
 }
 
 .link:hover {
@@ -58,10 +61,6 @@ nav {
   font-size: 2.3rem;
 }
 
-.container {
-  margin-top: 50px;
-}
-
 .card {
   background-color: #263238;
 }
@@ -86,22 +85,33 @@ nav {
   color: #eee5d9;
 }
 
-.footer-copyright .container {
-  margin-top: 0;
+.container {
+  margin-top: 50px;
+  padding-bottom: 3rem;
+}
+
+.footer-copyright {
+  margin: 0 auto;
+  justify-content: center !important;
 }
 
 .page-footer {
-  margin: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
 }
 
 footer {
   padding-top: 0 !important;
 }
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+.preloader-wrapper {
+  left: 47%;
+}
+
+.hidden {
+  display: none;
 }
 
 @media (max-width: 992px) {
@@ -112,13 +122,12 @@ footer {
     padding: 10px 32px;
     width: 40%;
   }
-  .sidenav li>a, .menu {
+  #nav-mobile li>a, .menu {
     color: #eee5d9;
     font-size: 1.3rem;
   }
-  button {
-    height: 40px;
-    width: 20%;
+  .waves-effect {
+    height: 60px;
     font-size: 2rem;
   }
 }
@@ -145,7 +154,7 @@ footer {
     white-space: nowrap;
     padding-left: 20px;
   }
-  .sidenav li>a {
+  #nav-mobile li>a {
     padding: 0 10px;
   }
 }
