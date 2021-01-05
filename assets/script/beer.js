@@ -139,12 +139,10 @@ $(document).ready(function () {
 
     function isSaved(info) {
         if (localStorage.getItem("savedBeer") !== null) {
-            var beerIds = localStorage.getItem("savedId");
             if (info.fields !== undefined) {
                 var beerId = info.fields.id;
-                var inArr = $.inArray(beerId + "", beerIds);
+                var inArr = $.inArray(beerId, listIds);
                 console.log(beerId);
-                console.log(beerIds);
                 if (inArr === -1) {
                     return false;
                 } else {
