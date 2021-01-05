@@ -3,4 +3,5 @@ $(document).ready(function () {
     $(".dropdown-trigger").dropdown();
     $(".chips").chips();
     $(".sidenav").sidenav();
+    $(".modal").modal();
 });

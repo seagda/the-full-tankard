@@ -27,6 +27,7 @@ body {
   border: none;
   background-color: transparent;
   color: #ffab40;
+  text-decoration: underline;
 }
 
 .link:hover {
@@ -103,6 +104,14 @@ nav {
 
 footer {
   padding-top: 0 !important;
+}
+
+.preloader-wrapper {
+  left: 47%;
+}
+
+.hidden {
+  display: none;
 }
 
 @media (max-width: 992px) {

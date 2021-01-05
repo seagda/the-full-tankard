@@ -60,9 +60,11 @@ const settings = {
 };
 
 $.ajax(settings).done(function (response) {
-
+  $(".preloader-wrapper").addClass("hidden");
+  
   // get unsorted results from query
   var unsortedList = response.value;
+  
   // sort by date, descending
   function sortByDateDesc(unsortedList, datePublished) {
     return unsortedList.sort(function (a, b) {
@@ -72,21 +74,14 @@ $.ajax(settings).done(function (response) {
     });
   }
   var sortedList = sortByDateDesc(unsortedList);
-  //        console.log(sortedList);
-  // append the sorted articles to the homepage
+  
   for (i = 0; i < 10; i++) {
     var origTitle = sortedList[i].title;
     var origDate = sortedList[i].datePublished;
-    var articleTitle = origTitle;//.substring(0, 60);
+    var articleTitle = origTitle;
     var articleSrc = sortedList[i].url;
     var articleDate = origDate.substring(0, 10);
-    $("#article-list").append(`<p>${articleDate} - <a href="${articleSrc}" target="_blank" class="link">${articleTitle}</a></p>`);
-    // var newsCard = $("<section>").addClass("card news-card");
-    // var date = $(`<p class="date">${articleDate}</p>`);
-    // var url = $(`<a class="link" href="${articleSrc}" target="_blank">${articleTitle}</a>`);
-    // newsCard.append(date);
-    // newsCard.append(url);
-    // $("#article-container").append(newsCard);
+    $("#article-list").append(`<span>${articleDate} - <a href="${articleSrc}" target="_blank" class="link">${articleTitle}</a></span>`);
   };
 
 });

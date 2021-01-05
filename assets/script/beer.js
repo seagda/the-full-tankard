@@ -1,38 +1,217 @@
-// TODO:create a function that results in a beer name 
 $(document).ready(function () {
+    var queryURLBeer = `https://data.opendatasoft.com/api/records/1.0/search/?dataset=open-beer-database%40public-us&`;
+    var beerStyle;
+    var beerName;
+    var listBeers = JSON.parse(localStorage.getItem("savedBeer"));
+    var listIds = JSON.parse(localStorage.getItem("savedId"));
+
+    fetchAPI("https://data.opendatasoft.com/api/records/1.0/search/?dataset=open-beer-database%40public-us&rows=51&facet=style_name&facet=cat_name&facet=name_breweries&facet=country");
+    displaySavedBeer();
+    // isSaved();
+
+    $("#style-dropdown").on("change", function () {
+        queryURLBeer = "https://data.opendatasoft.com/api/records/1.0/search/?dataset=open-beer-database%40public-us&";
+        beerStyle = $(this).val();
+
+        if (beerStyle !== "") {
+            queryURLBeer += "q=" + beerStyle + "&";
+        }
+    });
+
+    var queryURLBeerDropdown = "https://data.opendatasoft.com/api/records/1.0/search/?dataset=open-beer-database%40public-us&q=&facet=style_name&facet=cat_name&facet=name"
+    $.ajax({
+        url: queryURLBeerDropdown,
+        method: "GET"
+    }).then(function (response) {
+        for (var i = 0; i < response.facet_groups[0].facets.length; i++) {
+            var dropdownValue = response.facet_groups[0].facets[i].name;
+            $("#style-dropdown").append(new Option(dropdownValue, dropdownValue));
+        }
+        $('select').formSelect();
+    });
+
     $(".beer-btn").click(function (event) {
         event.preventDefault();
-        $("#card-container").empty();
 
-        var beerName = $("#beer-keyword").val();
-        var queryURLBeer = "https://data.opendatasoft.com/api/records/1.0/search/?dataset=open-beer-database%40public-us&q=" + beerName + "&facet=style_name&facet=cat_name&facet=name"
+        beerName = $('#beer-keywords').val();
+        if (beerName !== "") {
+            queryURLBeer += "q=" + beerName;
+        };
+
+        if (beerName === "" && beerStyle === undefined) {
+            $(".beer-btn").addClass("modal-trigger");
+            $(".beer-btn").attr("href", "#modal");
+        } else {
+            $(".beer-btn").removeClass("modal-trigger");
+            $(".beer-btn").removeAttr("href");
+            $("#card-container").empty();
+            fetchAPI(queryURLBeer);
+        }
+    });
+
+    $(document).on('click', '.fa-heart', function () {
+        saveBeer($(this));
+    });
+
+    function fetchAPI(url) {
+        $.ajax({
+            url: url,
+            method: "GET"
+        }).then(function (response) {
+            $(".preloader-wrapper").addClass("hidden");
+            for (var i = 0; i < response.records.length; i++) {
+                var saveState = isSaved(response.records[i]);
+                createCard(response.records[i], i, $("#card-container"), saveState);
+            };
+        });
+    }
+
+    function saveBeer(selectedBeer) {
+        var state = selectedBeer.attr("data-state");
+        var beerIndex = selectedBeer.attr("data-index");
+        var savedBeer;
 
         $.ajax({
             url: queryURLBeer,
             method: "GET"
         }).then(function (response) {
-            for (var i = 0; i < response.records.length; i++) {
-                var beerCardMedium = $("<section>").addClass("card medium");
-                $("#card-container").append(beerCardMedium);
-                var beerCardImage = $("<section>").addClass("card-image waves-effect waves-block waves-light");
-                beerCardMedium.append(beerCardImage);
-                var beerCardBeerImage = $("<section>").addClass("activator beer-image");
-                beerCardImage.append(beerCardBeerImage);
-                var beerCardContent = $("<section>").addClass("card-content");
-                beerCardMedium.append(beerCardContent);
+            savedBeer = response.records[beerIndex];
+            var beerId = savedBeer.fields.id;
+            var inArr = $.inArray(beerId, listIds);
 
-                var beerCardTitleActivator = $("<span>").addClass("card-title activator beer-name");
-                var beerIClass = $("<i class='material-icons right'>more_vert</i>");
+            if (state === "unsave") {
+                var savedIcon = selectedBeer.attr("data-saved");
 
-                beerCardTitleActivator.text("Name: " + response.records[i].fields.name);
-                beerCardTitleActivator.append(beerIClass);
-                beerCardContent.append(beerCardTitleActivator);
+                selectedBeer.attr("class", savedIcon);
+                selectedBeer.attr("data-state", "saved");
+
+                if (localStorage.getItem("savedBeer") === null) {
+                    listBeers = [{ beerId: beerId, beerData: savedBeer }];
+                    listIds = [beerId];
+                } else {
+                    if (inArr === -1 || listBeers.length === 0) {
+                        listBeers.push({ beerId: beerId, beerData: savedBeer });
+                        listIds.push(beerId);
+                    }
+                }
+            } else {
+                var unsaveIcon = selectedBeer.attr("data-unsave");
+
+                selectedBeer.attr("class", unsaveIcon);
+                selectedBeer.attr("data-state", "unsave");
+
+                if (inArr !== -1) {
+                    var index = jQuery.inArray(beerId, listIds);
+                    var removedId = listIds[index];
+                    listIds.splice(index, 1);
+                    for (var i = 0; i < listBeers.length; i++) {
+                        if (removedId === listBeers[i].beerId) {
+                            listBeers.splice(i, 1);
+                        }
+                    }
+                }
+            }
+            localStorage.setItem("savedId", JSON.stringify(listIds));
+            localStorage.setItem("savedBeer", JSON.stringify(listBeers));
+            displaySavedBeer();
+        });
+    }
+
+    function displaySavedBeer() {
+        $("#my-beer").contents().remove();
+        var beerInfo = JSON.parse(localStorage.getItem("savedBeer"));
+
+        if (beerInfo !== null) {
+            for (var i = 0; i < beerInfo.length; i++) {
+                var saveState = isSaved(beerInfo[i].beerData);
+                createCard(beerInfo[i].beerData, i, $("#my-beer"), saveState);
+            }
+        }
+    }
+
+    function isSaved(info) {
+        if (localStorage.getItem("savedBeer") !== null) {
+            var beerIds = localStorage.getItem("savedId");
+            if (info.fields !== undefined) {
+                var beerId = info.fields.id;
+                var inArr = $.inArray(beerId + "", beerIds);
+                console.log(beerId);
+                console.log(beerIds);
+                if (inArr === -1) {
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        }
+    }
+
+    function createCard(cardInfo, index, container, saveState) {
+        var beerCardMedium = $("<section>").addClass("card medium col s3");
+        container.append(beerCardMedium);
+
+        var beerCardContent = $("<section>").addClass("card-content");
+        beerCardMedium.append(beerCardContent);
+
+        var beerCardTitle = $("<span>").addClass("card-title beer-name");
+
+        var beerSave;
+
+        if (saveState) {
+            beerSave = $(`<i class='right fas fa-heart fa-xs' data-saved='right fas fa-heart fa-xs' data-unsave='right far fa-heart fa-xs' data-state='save' data-index=${index}></i>`);
+        } else {
+            beerSave = $(`<i class='right far fa-heart fa-xs' data-saved='right fas fa-heart fa-xs' data-unsave='right far fa-heart fa-xs' data-state='unsave' data-index=${index}></i>`);
+        }
+
+        beerCardTitle.text(cardInfo.fields.name);
+        beerCardTitle.append(beerSave);
+        beerCardContent.append(beerCardTitle);
+
+        var beerDetail = $("<section>").addClass("detail-info");
+        beerCardContent.append(beerDetail);
+
+        // append beerStyle to card
+        if (cardInfo.fields.style_name !== undefined) {
+            var beerStyleName = $("<section>").addClass("style chip");
+            beerStyleName.text("Style: " + cardInfo.fields.style_name);
+        };
+        beerDetail.append(beerStyleName);
+
+        // append beerCountry to card
+        if (cardInfo.fields.country !== undefined) {
+            var beerCountryOrigin = $("<section>").addClass("country chip");
+            beerCountryOrigin.text("Country: " + cardInfo.fields.country);
+        };
+        beerDetail.append(beerCountryOrigin);
+
+        // append beerABV to card
+        var beerCardABV = $("<section>").addClass("abv chip");
+        if (cardInfo.fields.abv !== undefined) {
+            var beerCardABV = $("<section>").addClass("abv chip");
+            beerCardABV.text("ABV: " + cardInfo.fields.abv.toFixed(2));
+
+        };
+        beerDetail.append(beerCardABV);
 
 
-                var learnMoreLink = $("<button class='link'>Learn More</button>");
-                var currentResponse = response.records[i];
-                learnMoreLink.click({ param: currentResponse }, generateBeerInfo);
-                beerCardContent.append(learnMoreLink);
+        // append beerIBU to card 
+        if (cardInfo.fields.ibu !== undefined) {
+            var beerCardIBU = $("<section>").addClass("ibu chip");
+            beerCardIBU.text("IBU: " + cardInfo.fields.ibu.toFixed(2));
+        };
+        beerDetail.append(beerCardIBU);
+
+
+        // append briefBeerDescription to card
+        var beerTitle = $("<p class='sub desc-title activator'>Description: </p>");
+        beerDetail.append(beerTitle);
+        var briefBeerDescription = $("<p>").addClass("brief-descript");
+        if (cardInfo.fields.descript !== undefined) {
+            if (cardInfo.fields.descript.length > 100) {
+                briefBeerDescription = $("<p>").addClass("activator");
+                briefBeerDescription.text(cardInfo.fields.descript.substr(0, 100) + "...");
+
+                beerTitle.append("<i class='material-icons right'>more_vert</i>");
 
                 var beerCardReveal = $("<section>").addClass("card-reveal");
                 beerCardMedium.append(beerCardReveal);
@@ -43,38 +222,29 @@ $(document).ready(function () {
                 var beerCloseSign = $("<i class='material-icons right'>close</i>")
                 beerCardTitle.append(beerCloseSign);
 
-                // append beerDescription
-                var beerDescription = $("<p>").addClass("beer-description");
-                beerDescription.text(response.records[i].fields.descript);
+
+                // append briefBeerDescription to hidden card
+                var beerDescription = $("<p>").addClass("full-descript");
+                beerDescription.text(cardInfo.fields.descript);
                 beerCardReveal.append(beerDescription);
+            } else {
+                briefBeerDescription.text(cardInfo.fields.descript);
             }
-        });
-    });
+        } else {
+            briefBeerDescription.text(`No description on file for ${cardInfo.fields.name}`);
+        }
+        beerDetail.append(briefBeerDescription)
 
-    function generateBeerInfo(event) {
-        event.preventDefault();
-        console.log(event.data.param);
-        $("#card-container").addClass("hidden");
-        $("#beer-info").removeClass("hidden");
-        var learnMoreBeerName = event.data.param.fields.name;
-        $(".beer-name").text(learnMoreBeerName);
-        var beerStyle = event.data.param.fields.style_name;
-        $("#beer-style").text(beerStyle);
-        var beerCountry = event.data.param.fields.country;
-        $("#beer-country").text(beerCountry);
-        var learnMoreDescription = event.data.param.fields.descript;
-        $(".beer-description").text(learnMoreDescription);
-        var abvVal = event.data.param.fields.abv;
-        $("#abv-val").text(abvVal.toFixed(2));
-        // TODO: clear values
-        var ibuVal = event.data.param.fields.ibu;
-        $("#ibu-val").text(ibuVal.toFixed(2));
-        var srmVal = event.data.param.fields.srm;
-        $("#srm-val").text(srmVal.toFixed(2));
-        var learnMoreBreweryName = event.data.param.fields.name_breweries;
-        $("#brewery-name").text("Breweries: " + learnMoreBreweryName);
+
+        //  append brewery info and link to brewery.html
+        var beerBrewery = $("<a class='link' target='_blank'>").addClass("beer-brewery");
+        if (cardInfo.fields.name_breweries === undefined) {
+            beerBrewery.text(`No brewery on file for ${cardInfo.fields.name}`)
+        } else {
+            beerBrewery.text(cardInfo.fields.name_breweries);
+            beerBrewery.attr("href", "brewery.html");
+        };
+        beerDetail.append($("<p class='sub'>Brewery: </p>"));
+        beerDetail.append(beerBrewery);
     }
-
-
-    // TODO: save user input in local storage
 });

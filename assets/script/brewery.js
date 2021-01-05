@@ -1,19 +1,20 @@
 $(document).ready(function () {
+  var breweryState;
+
+  fetchAPI("https://api.openbrewerydb.org/breweries?");
+
+  $("#state-dropdown").on("change", function () {
+    breweryState = $(this).val();
+  });
+
   $(".brewery-btn").click(function (event) {
     event.preventDefault();
-    $("#brewery-card-container").empty()
 
     var queryURLBrewery = "https://api.openbrewerydb.org/breweries?"
 
-<<<<<<< HEAD
-    var breweryCity = $("#region-keyword").val();
-    var brewery = $("#brewer-keyword").val();
-=======
     var breweryCity = $("#search-by-city").val();
-    var breweryState = $("#search-by-state").val();
+
     var breweryName = $("#search-by-name").val();
-    console.log(breweryName);
->>>>>>> 9ddbf8a3d327ac7b876c9d3921db069f91c416ab
 
     if (breweryCity !== "") {
       queryURLBrewery += "by_city=" + breweryCity + "&"
@@ -27,11 +28,25 @@ $(document).ready(function () {
       queryURLBrewery += "by_name=" + breweryName;
     };
 
+    if (breweryCity === "" && breweryState === undefined && breweryName === "") {
+      $(".brewery-btn").addClass("modal-trigger");
+      $(".brewery-btn").attr("href", "#modal");
+    } else {
+      $(".brewery-btn").removeClass("modal-trigger");
+      $(".brewery-btn").removeAttr("href");
+      $("#brewery-card-container").empty()
+      fetchAPI(queryURLBrewery);
+    }
+  });
 
+  $('select').formSelect();
+
+  function fetchAPI(url) {
     $.ajax({
-      url: queryURLBrewery,
+      url: url,
       method: "GET"
     }).then(function (response) {
+      $(".preloader-wrapper").addClass("hidden");
       for (var i = 0; i < response.length; i++) {
 
         var card = $("<section>").addClass("card horizontal");
@@ -55,22 +70,19 @@ $(document).ready(function () {
         getDirections.text("Get Directions");
 
         var passToMaps = "";
-        console.log(response);
-        console.log(response[i].street);
 
-            if (response[i].street !== undefined) {
-              passToMaps += response[i].street + ", ";
-            }
-            if (response[i].city !== undefined) {
-              passToMaps += response[i].city + ", ";
-            }
-            if (response[i].state !== undefined) {
-              passToMaps += response[i].state;
-            }
-        
+        if (response[i].street !== undefined) {
+          passToMaps += response[i].street + ", ";
+        }
+        if (response[i].city !== undefined) {
+          passToMaps += response[i].city + ", ";
+        }
+        if (response[i].state !== undefined) {
+          passToMaps += response[i].state;
+        }
+
 
         var link = `http://maps.google.com/maps?q=${encodeURIComponent(passToMaps)}`;
-        console.log(link);
         getDirections.attr("href", link);
 
         cardContent.append(breweryName);
@@ -82,12 +94,12 @@ $(document).ready(function () {
         var cardAction = $("<a target='_blank'>").addClass("card-action link");
         cardAction.text("Visit Website");
         cardAction.attr("href", response[i].website_url);
-        
+
         cardStacked.append(cardContent);
         cardStacked.append(cardAction);
         card.append(cardStacked);
         $("#brewery-card-container").append(card);
       }
     });
-  });
+  }
 });

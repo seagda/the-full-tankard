@@ -37,11 +37,11 @@ var searchArticle = document.getElementById("article-button");
 // Set click event for button that passes the parameters
 searchArticle.addEventListener("click", event => {
     event.preventDefault();
+    $(".preloader-wrapper").removeClass("hidden");
     $("#article-row").empty();
 
-// Get pageSize, toPublishedDate, and fromPublishedDate from slide selector element
+    // Get pageSize, toPublishedDate, and fromPublishedDate from slide selector element
     var pageSizeSlide = document.getElementById("number-article");
-
     var dateRangeSlide = document.getElementById("year-range");
 
     var pageSize = pageSizeSlide.noUiSlider.get();
@@ -49,7 +49,15 @@ searchArticle.addEventListener("click", event => {
     var toPublishedDate = dateRangeSlide.noUiSlider.get()[1] + "-12-31";
     var articleQuery = $("#article-keyword").val();
 
-// Settings for Ajax call
+    if (articleQuery !== "") {
+        $(".article-btn").removeClass("modal-trigger");
+        $(".article-btn").removeAttr("href");
+    } else {
+        $(".article-btn").addClass("modal-trigger");
+        $(".article-btn").attr("href", "#modal");
+    }
+
+    // Settings for Ajax call
     const settings = {
         "async": true,
         "crossDomain": true,
@@ -59,13 +67,14 @@ searchArticle.addEventListener("click", event => {
             "x-rapidapi-key": "045e0eb614mshe7dc79e7fe14caep1a845ejsnbb288956f7e2",
             "x-rapidapi-host": "contextualwebsearch-websearch-v1.p.rapidapi.com"
         }
-      };
-      
-      $.ajax(settings).done(function (response) {
-      
-      // get unsorted results from query
+    };
+
+    $.ajax(settings).done(function (response) {
+        $(".preloader-wrapper").addClass("hidden");
+
+        // get unsorted results from query
         var unsortedList = response.value;
-      // sort by date, descending
+        // sort by date, descending
         function sortByDateDesc(unsortedList, datePublished) {
             return unsortedList.sort(function (a, b) {
                 var x = a.datePublished; var y = b.datePublished;
@@ -73,8 +82,8 @@ searchArticle.addEventListener("click", event => {
             });
         }
         var sortedList = sortByDateDesc(unsortedList);
-    
-    // append the sorted articles to the card row
+
+        // append the sorted articles to the card row
         for (i = 0; i < pageSize; i++) {
             var origDate = sortedList[i].datePublished;
             var articleTitle = sortedList[i].title;
@@ -82,22 +91,20 @@ searchArticle.addEventListener("click", event => {
             var articleDesc = sortedList[i].description;
             var articleDate = origDate.substring(0, 10);
             var articleCard = $(`
-            <section class="col s12 m6">
-                <section class="card">
-                    <section class="card-content white-text">
-                        <span class="card-title display-title">${articleTitle}</span>
-                        <p class="display-date">${articleDate}</p>
-                        <p class="display-desc">${articleDesc}</p>
-                    </section>
-                    <section class="card-action display-link">
-                        <a href="${articleSrc}" target="_blank"><button class="link">Read more</button></a>
-                    </section>
+            <section class="col s5 card">
+                <section class="card-content white-text">
+                    <span class="card-title display-title">${articleTitle}</span>
+                    <p class="display-date">${articleDate}</p>
+                    <p class="display-desc">${articleDesc}</p>
+                </section>
+                <section class="card-action display-link">
+                    <a href="${articleSrc}" target="_blank"><button class="link">Read more</button></a>
                 </section>
             </section>`);
 
             $("#article-row").append(articleCard);
         };
-       
-      });
+
+    });
 
 });

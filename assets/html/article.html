@@ -15,9 +15,9 @@
 
     <link rel="stylesheet" href="https://materializecss.com/extras/noUiSlider/nouislider.css">
 
-    <link rel="stylesheet" href="../css/article.css">
     <link rel="stylesheet" href="../css/style.css">
-    <title>News</title>
+    <link rel="stylesheet" href="../css/article.css">
+    <title>The Full Tankard | News</title>
 </head>
 
 <body>
@@ -69,7 +69,8 @@
                             </section>
                         </section>
                         <section class="row center">
-                            <button class="waves-effect blue-grey darken-4 btn-large article-btn btn" id="article-button">Find
+                            <button class="waves-effect blue-grey darken-4 btn-large article-btn btn"
+                                id="article-button">Find
                                 Articles</button>
                         </section>
                     </form>
@@ -80,7 +81,30 @@
     </section>
 
     <section class="container">
-        <section class="row" id="article-row"></section>
+        <section class="row" id="article-row">
+        </section>
+        <section class="preloader-wrapper active hidden">
+            <section class="spinner-layer spinner-blue-only">
+                <section class="circle-clipper left">
+                    <section class="circle"></section>
+                </section>
+                <section class="gap-patch">
+                    <section class="circle"></section>
+                </section>
+                <section class="circle-clipper right">
+                    <section class="circle"></section>
+                </section>
+            </section>
+        </section>
+        <section id="modal" class="modal">
+            <section class="modal-content">
+              <h4>Please fill some keyword in the search engine:)</h4>
+            </section>
+            <section class="modal-footer">
+              <a href="#!" class="modal-close waves-effect waves-grey btn-flat link">OK</a>
+            </section>
+          </section>
+    </section>
 
     <footer class="page-footer grey darken-4">
         <p class="footer-copyright">
