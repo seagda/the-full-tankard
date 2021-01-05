@@ -91,7 +91,7 @@
 
 .detail-info {
   height: 250px;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 
 .card .card-reveal {
