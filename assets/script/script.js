@@ -6,22 +6,21 @@ $(document).ready(function () {
     url: queryURL,
     method: "GET"
   }).then(function (response) {
-    console.log(response);
     $("#rand-beer").text(response.records[0].fields.name);
 
     if (response.records[0].fields.descript === undefined) {
-      $("#description").text(`no description for ${response.records[0].fields.name} yet`)
+      $("#rand-description").text(`no description for ${response.records[0].fields.name} yet`)
     } else {
-      $("#description").text(response.records[0].fields.descript);
+      $("#rand-description").text(response.records[0].fields.descript);
     }
 
     if (response.records[0].fields.style_id === "-1") {
-      $("#style-name").text("style name not avaliable");
+      $("#rand-style-name").text("style name not avaliable");
     } else {
-      $("#style-name").text(response.records[0].fields.style_name);
+      $("#rand-style-name").text(response.records[0].fields.style_name);
     }
 
-    $("#brewery-name").text(response.records[0].fields.name_breweries);
+    $("#rand-brewer-name").text(response.records[0].fields.name_breweries);
 
     var address = "";
     if (response.records[0].fields.address1 !== undefined) {
@@ -36,16 +35,53 @@ $(document).ready(function () {
     $("#rand-address").text(address);
 
     if (response.records[0].fields.website === undefined) {
-      $("#url").text("website not avaliable");
+      $("#rand-url").text("website not avaliable");
     } else {
-      $("#url").append(`Visit <a href="${response.records[0].fields.website}" target="_blank">${response.records[0].fields.name}</a>`);
+      $("#rand-url").append(`Visit <a href="${response.records[0].fields.website}" target="_blank" class="link">${response.records[0].fields.name}</a>`);
     }
+  });
+
+  $("#get-direction").on("click", function () {
+    var link = `http://maps.google.com/maps?q=${encodeURIComponent($("#rand-address").text())}`;
+    $(this).attr("href", link);
   });
 });
 
-  
-  
+// Get data for Articles from ContextualWebSearch API
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/NewsSearchAPI?q=beer%20Pacific%Northwest&pageNumber=1&pageSize=10&autoCorrect=true&fromPublishedDate=2020-01-01&toPublishedDate=2021-12-31",
+  "method": "GET",
+  "headers": {
+    "x-rapidapi-key": "045e0eb614mshe7dc79e7fe14caep1a845ejsnbb288956f7e2",
+    "x-rapidapi-host": "contextualwebsearch-websearch-v1.p.rapidapi.com"
+  }
+};
 
-
-
+$.ajax(settings).done(function (response) {
+  $(".preloader-wrapper").addClass("hidden");
   
+  // get unsorted results from query
+  var unsortedList = response.value;
+  
+  // sort by date, descending
+  function sortByDateDesc(unsortedList, datePublished) {
+    return unsortedList.sort(function (a, b) {
+      var x = a.datePublished; 
+      var y = b.datePublished;
+      return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+    });
+  }
+  var sortedList = sortByDateDesc(unsortedList);
+  
+  for (i = 0; i < 10; i++) {
+    var origTitle = sortedList[i].title;
+    var origDate = sortedList[i].datePublished;
+    var articleTitle = origTitle;
+    var articleSrc = sortedList[i].url;
+    var articleDate = origDate.substring(0, 10);
+    $("#article-list").append(`<span>${articleDate} - <a href="${articleSrc}" target="_blank" class="link">${articleTitle}</a></span>`);
+  };
+
+});
