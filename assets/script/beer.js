@@ -1,7 +1,5 @@
 $(document).ready(function () {
-    var queryURLBeer = `https://data.opendatasoft.com/api/records/1.0/search/?dataset=open-beer-database%40public-us&`;
     var beerStyle;
-    var beerName;
     var storedBeerStyle = localStorage.getItem("stored beer style")
     var listBeers = JSON.parse(localStorage.getItem("savedBeer"));
     var listIds = JSON.parse(localStorage.getItem("savedId"));
@@ -10,14 +8,7 @@ $(document).ready(function () {
     displaySavedBeer();
 
     $("#style-dropdown").on("change", function () {
-        queryURLBeer = "https://data.opendatasoft.com/api/records/1.0/search/?dataset=open-beer-database%40public-us&";
         beerStyle = $(this).val();
-
-
-        if (beerStyle !== "") {
-            queryURLBeer += "q=" + beerStyle + "&";
-        }
-        localStorage.setItem("stored beer style", beerStyle)
     });
 
     var queryURLBeerDropdown = "https://data.opendatasoft.com/api/records/1.0/search/?dataset=open-beer-database%40public-us&q=&facet=style_name&facet=cat_name&facet=name"
@@ -32,19 +23,26 @@ $(document).ready(function () {
         $('select').formSelect();
     });
 
-
     var storedBeer = localStorage.getItem("stored beer")
 
     $(".beer-btn").click(function (event) {
         event.preventDefault();
+        $(".preloader-wrapper").removeClass("hidden");
+        localStorage.setItem("stored beer style", beerStyle);
 
-        beerName = $('#beer-keywords').val();
+        var queryURLBeer = `https://data.opendatasoft.com/api/records/1.0/search/?dataset=open-beer-database%40public-us&`;
+
+        if (beerStyle !== undefined) {
+            queryURLBeer += "q=" + beerStyle + "&";
+        }
+
+        var beerName = $("#beer-keywords").val();
         if (beerName !== "") {
             queryURLBeer += "q=" + beerName;
         };
-      
+
         localStorage.setItem("stored beer", beerName)
-      
+
         if (beerName === "" && beerStyle === undefined) {
             $(".beer-btn").addClass("modal-trigger");
             $(".beer-btn").attr("href", "#modal");
@@ -61,7 +59,6 @@ $(document).ready(function () {
     });
 
     function fetchAPI(url) {
-
         $.ajax({
             url: url,
             method: "GET"
@@ -142,7 +139,6 @@ $(document).ready(function () {
             if (info.fields !== undefined) {
                 var beerId = info.fields.id;
                 var inArr = $.inArray(beerId, listIds);
-                console.log(beerId);
                 if (inArr === -1) {
                     return false;
                 } else {
@@ -218,13 +214,13 @@ $(document).ready(function () {
                 briefBeerDescription.text(cardInfo.fields.descript.substr(0, 100) + "...");
 
                 beerTitle.append("<i class='material-icons right'>more_vert</i>");
-              
+
                 var beerCardReveal = $("<section>").addClass("card-reveal");
                 beerCardMedium.append(beerCardReveal);
-  
+
                 var beerCardTitle = $("<span>").addClass("card-title");
                 beerCardReveal.append(beerCardTitle);
-  
+
                 var beerCloseSign = $("<i class='material-icons right'>close</i>")
                 beerCardTitle.append(beerCloseSign);
 
