@@ -13,6 +13,7 @@ $(document).ready(function () {
         queryURLBeer = "https://data.opendatasoft.com/api/records/1.0/search/?dataset=open-beer-database%40public-us&";
         beerStyle = $(this).val();
 
+
         if (beerStyle !== "") {
             queryURLBeer += "q=" + beerStyle + "&";
         }
@@ -212,13 +213,13 @@ $(document).ready(function () {
                 briefBeerDescription.text(cardInfo.fields.descript.substr(0, 100) + "...");
 
                 beerTitle.append("<i class='material-icons right'>more_vert</i>");
-
+              
                 var beerCardReveal = $("<section>").addClass("card-reveal");
                 beerCardMedium.append(beerCardReveal);
-
+  
                 var beerCardTitle = $("<span>").addClass("card-title");
                 beerCardReveal.append(beerCardTitle);
-
+  
                 var beerCloseSign = $("<i class='material-icons right'>close</i>")
                 beerCardTitle.append(beerCloseSign);
 
