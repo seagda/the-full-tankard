@@ -7,7 +7,6 @@ $(document).ready(function () {
 
     fetchAPI("https://data.opendatasoft.com/api/records/1.0/search/?dataset=open-beer-database%40public-us&rows=51&facet=style_name&facet=cat_name&facet=name_breweries&facet=country");
     displaySavedBeer();
-    // isSaved();
 
     $("#style-dropdown").on("change", function () {
         queryURLBeer = "https://data.opendatasoft.com/api/records/1.0/search/?dataset=open-beer-database%40public-us&";
@@ -131,12 +130,10 @@ $(document).ready(function () {
 
     function isSaved(info) {
         if (localStorage.getItem("savedBeer") !== null) {
-            var beerIds = localStorage.getItem("savedId");
             if (info.fields !== undefined) {
                 var beerId = info.fields.id;
-                var inArr = $.inArray(beerId + "", beerIds);
+                var inArr = $.inArray(beerId, listIds);
                 console.log(beerId);
-                console.log(beerIds);
                 if (inArr === -1) {
                     return false;
                 } else {
