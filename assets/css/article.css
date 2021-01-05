@@ -32,6 +32,11 @@
     margin-top: 10px;
 }
 
+#year-range .noUi-base .noUi-origin .noUi-handle .noUi-tooltip span {
+    font-size: 10px;
+    top: -3px;
+}
+
 .article-btn:hover {
     color: #ffab40;
 }
@@ -42,14 +47,13 @@
 
 .card {
     height: 400px;
-    overflow: scroll;
     display: inline-block;
     margin: 3% 4%;
 }
 
 .card-content {
     height: 350px;
-    overflow: scroll;
+    overflow: hidden;
     display: inline-block;
 }
 

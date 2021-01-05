@@ -43,6 +43,11 @@ form .row {
   color: #212121;
 }
 
+#search-by-state .select-wrapper ul.dropdown-content {
+  top: 10px !important;
+  max-height: 200px !important;
+}
+
 .brewery-btn:hover {
   color: #ff9100;
 }
@@ -105,5 +110,8 @@ a.get-directions-btn:hover {
   }
   .card .card-action {
     padding-top: 5px;
+  }
+  .card-content h4, .card-content h6 {
+    white-space: break-spaces;
   }
 }
