@@ -2,12 +2,12 @@ $(document).ready(function () {
     var queryURLBeer = `https://data.opendatasoft.com/api/records/1.0/search/?dataset=open-beer-database%40public-us&`;
     var beerStyle;
     var beerName;
+    var storedBeerStyle = localStorage.getItem("stored beer style")
     var listBeers = JSON.parse(localStorage.getItem("savedBeer"));
     var listIds = JSON.parse(localStorage.getItem("savedId"));
 
     fetchAPI("https://data.opendatasoft.com/api/records/1.0/search/?dataset=open-beer-database%40public-us&rows=51&facet=style_name&facet=cat_name&facet=name_breweries&facet=country");
     displaySavedBeer();
-    // isSaved();
 
     $("#style-dropdown").on("change", function () {
         queryURLBeer = "https://data.opendatasoft.com/api/records/1.0/search/?dataset=open-beer-database%40public-us&";
@@ -17,6 +17,7 @@ $(document).ready(function () {
         if (beerStyle !== "") {
             queryURLBeer += "q=" + beerStyle + "&";
         }
+        localStorage.setItem("stored beer style", beerStyle)
     });
 
     var queryURLBeerDropdown = "https://data.opendatasoft.com/api/records/1.0/search/?dataset=open-beer-database%40public-us&q=&facet=style_name&facet=cat_name&facet=name"
@@ -31,6 +32,9 @@ $(document).ready(function () {
         $('select').formSelect();
     });
 
+
+    var storedBeer = localStorage.getItem("stored beer")
+
     $(".beer-btn").click(function (event) {
         event.preventDefault();
 
@@ -38,7 +42,9 @@ $(document).ready(function () {
         if (beerName !== "") {
             queryURLBeer += "q=" + beerName;
         };
-
+      
+        localStorage.setItem("stored beer", beerName)
+      
         if (beerName === "" && beerStyle === undefined) {
             $(".beer-btn").addClass("modal-trigger");
             $(".beer-btn").attr("href", "#modal");
@@ -55,6 +61,7 @@ $(document).ready(function () {
     });
 
     function fetchAPI(url) {
+
         $.ajax({
             url: url,
             method: "GET"
