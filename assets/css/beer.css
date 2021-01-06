@@ -91,7 +91,17 @@
 
 .detail-info {
   height: 250px;
-  overflow-y: hidden;
+  overflow-y: scroll;
+  padding-bottom: 20px;
+}
+
+.detail-info::-webkit-scrollbar { 
+  width: 0 !important 
+}
+
+.detail-info { 
+  overflow: -moz-scrollbars-none; 
+  -ms-overflow-style: none;
 }
 
 .card .card-reveal {
