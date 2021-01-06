@@ -26,7 +26,7 @@ SO THAT I can understand trends in the industry.
 
 ---------
 ### TECHNOLOGIES UTILIZED 
-* UI Framework: Materialize []
+* UI Framework: Materialize [https://materializecss.com/]
 * APIs:
     * Open Brewery [https://www.openbrewerydb.org/documentation/01-listbreweries]
     * Open Beer Database [https://data.opendatasoft.com/explore/dataset/open-beer-database%40public-us/table/]
@@ -36,7 +36,7 @@ SO THAT I can understand trends in the industry.
 
 ---------
 ## WIREFRAMES
-The following images show the original appearance and functionality of our MVP. (Note: search by ABV functionality not available in release 1.0).
+The following images show the original appearance and functionality of our MVP. (Note: search by ABV functionality not available in this release).
 
 ### Homepage (browser & phone)
 ![Homepage demo](assets/img/mock-homepage-TFT.png)
@@ -46,9 +46,10 @@ The following images show the original appearance and functionality of our MVP. 
 
 ---------
 ## PITCH DECK
-![View the slide deck](Presentation-TheFullTankard.pdf)
+* [Presentation-TheFullTankard.pdf]
 
+---------
 ## DEVELOPER TEAM
-* Rita Zhu is our lead UI/UX designer.
-* Elias Calagiu is our lead developer.
-* Shea Mullaney is our project manager.
+* Rita Zhu [https://github.com/zhuxiaoyu1019] is our lead UI/UX designer.
+* Elias Calagiu [https://github.com/Elias-Calagiu] is our lead developer.
+* Shea Mullaney [https://github.com/seagda] is our project manager.
