@@ -46,7 +46,7 @@ The following images show the original appearance and functionality of our MVP. 
 
 ---------
 ## PITCH DECK
-* [Presentation-TheFullTankard.pdf]
+([Presentation Slides](Presentation-TheFullTankard.pdf))
 
 ---------
 ## DEVELOPER TEAM
