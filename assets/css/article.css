@@ -53,8 +53,17 @@
 
 .card-content {
     height: 350px;
-    overflow: hidden;
+    overflow-y: scroll;
     display: inline-block;
+}
+
+.card-content::-webkit-scrollbar {
+    width: 0 !important
+}
+
+.card-content {
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
 }
 
 .card .card-content .card-title {

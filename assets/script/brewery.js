@@ -7,6 +7,8 @@ $(document).ready(function () {
     breweryState = $(this).val();
   });
 
+  $('select').formSelect();
+
   $(".brewery-btn").click(function (event) {
     event.preventDefault();
     $(".preloader-wrapper").removeClass("hidden");
@@ -40,18 +42,16 @@ $(document).ready(function () {
     }
   });
 
-  $('select').formSelect();
-
   function fetchAPI(url) {
     $.ajax({
       url: url,
       method: "GET"
     }).then(function (response) {
+      console.log(response);
       $(".preloader-wrapper").addClass("hidden");
       for (var i = 0; i < response.length; i++) {
 
         var card = $("<section>").addClass("card horizontal");
-        var cardImage = $("<section>").addClass("card-image");
         var cardStacked = $("<section>").addClass("card-stacked");
         var cardContent = $("<section>").addClass("card-content");
 
