@@ -2,7 +2,11 @@
 
 
 ## DESCRIPTION
-Introducing "The Full Tankard", an streamlined web application, allows bar managers to find information about local beers and breweries in Washington State.
+Introducing "The Full Tankard": a free, streamlined, fully responsive web application that allows bar managers to find and save information about local beers and craft breweries in the Pacific Northwest (and beyond) without leaving the floor, built in JQuery, CSS, and HTML on top of the Materialize framework.
+
+---------
+## DEPLOYED APPLICATION, RELEASE 1.0
+View the deployed application:  [https://seagda.github.io/the-full-tankard/].
 
 ---------
 ## USER STORY
@@ -16,33 +20,23 @@ Also, AS A bar manager,
 I WANT a directory of brewers by name with styles of beer brewed and contact information
 SO THAT I can locate and procure local beers from brewers that my customers might enjoy at my bar.
 
----------
-## OUR SOLUTION
-* Kanban board
-* The Pitch: Why our app? 
-* Our MVP vs Product Vision 
+Also, AS A bar manager,
+I WANT current news and events regarding craft beer and breweries
+SO THAT I can understand trends in the industry.
 
+---------
 ### TECHNOLOGIES UTILIZED 
-* Materialize for our CSS framework
-* APIs: currently using
+* UI Framework: Materialize [https://materializecss.com/]
+* APIs:
     * Open Brewery [https://www.openbrewerydb.org/documentation/01-listbreweries]
-    * Beer.db [https://openbeer.github.io/]
-    * Brewerydb.com [https://www.brewerydb.com/developers/docs]
-
-* APIs for Ratings/Social media: TBD 
-    * The Beer Spot [http://www.thebeerspot.com/api/reference]
-    * Ratebeer.com [https://www.ratebeer.com/api-documentation.asp]
+    * Open Beer Database [https://data.opendatasoft.com/explore/dataset/open-beer-database%40public-us/table/]
+    * Contextual Web Search [https://rapidapi.com/contextualwebsearch/api/web-search]
+    * Google Maps [https://cloud.google.com/maps-platform/]
+* Photography courtesy of Unsplash [https://unsplash.com/s/photos/beer]
 
 ---------
-## ACCEPTANCE CRITERIA
-GIVEN ...
-AS A ...
-WHEN ...
-THEN ...
-
----------
-## VIEW THE MOCKUPS
-The following images show the appearance and functionality of our MVP:
+## WIREFRAMES
+The following images show the original appearance and functionality of our MVP. (Note: search by ABV functionality not available in this release).
 
 ### Homepage (browser & phone)
 ![Homepage demo](assets/img/mock-homepage-TFT.png)
@@ -51,7 +45,11 @@ The following images show the appearance and functionality of our MVP:
 ![Beer Results demo](assets/img/mock-beer-results-TFT.png)
 
 ---------
-## ABOUT THE TEAM
-* Rita Z. is our lead UI/UX designer.
-* Elias Calagiu is our lead developer.
-* Shea Mullaney is our project manager.
+## PITCH DECK
+* [Presentation-TheFullTankard.pdf]
+
+---------
+## DEVELOPER TEAM
+* Rita Zhu [https://github.com/zhuxiaoyu1019] is our lead UI/UX designer.
+* Elias Calagiu [https://github.com/Elias-Calagiu] is our lead developer.
+* Shea Mullaney [https://github.com/seagda] is our project manager.
